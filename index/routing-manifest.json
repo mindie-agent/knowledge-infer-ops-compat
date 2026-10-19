@@ -1,0 +1,64 @@
+{
+  "build_elapsed_ms": 0.18695800099521875,
+  "closure": {
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
+  },
+  "digest": "3d6114cf2077748c1d36911514dbd938295301ebf3c9d0f6b5b7dabd4d747e51",
+  "generation": "4c69ddafaa064f6a2083a53bdb0ba8e17ebf57d0a85c76178843589e534f7be3",
+  "id_path": {
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md"
+  },
+  "query_budget_excludes_build": true,
+  "schema_version": "mindie-routing-manifest/1",
+  "token_estimator": "utf8_bytes_div_4_ceiling",
+  "unit_count": 1,
+  "units": [
+    {
+      "category": "sop",
+      "closure_digest": "sha256:61acda65f2c822299a4eed5dae44b9a4ab244656084890fc7cc86ea102e3f3e2",
+      "conditions": {
+        "repository": "vllm-project/vllm-ascend",
+        "revision": "175ef4d49c2072f9233619636f0309f4f88b4e2c"
+      },
+      "content_digest": "sha256:530bcda3284440cd5c9cd132200bf662382f11c651c3f8934fb6091312596056",
+      "content_sha256": "530bcda3284440cd5c9cd132200bf662382f11c651c3f8934fb6091312596056",
+      "domain_path": "deployment/vllm-ascend",
+      "evidence_strength": "single_observation",
+      "id": "unit-vllm-ascend-build-entrypoint-and-soc-probe",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/unit-vllm-ascend-build-entrypoint-and-soc-probe-review.json",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/setup.py#L74-L154",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/setup.py#L476-L529",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/tests/ut/conftest.py#L39-L132"
+        ],
+        "source_digest": "c3a5a3ecd9be596300fb39a115d062a889ba66eb544f7a6828885834c53b76b3",
+        "source_locator": "docs/evidence/unit-vllm-ascend-build-entrypoint-and-soc-probe-review.json",
+        "source_type": "ecosystem_repo",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "vLLM-Ascend packaging metadata and CPU test shims prove different things",
+      "token_estimate": 547,
+      "triggers": {
+        "error_signatures": [],
+        "keywords": [
+          "vllm-ascend",
+          "packaging",
+          "metadata",
+          "and",
+          "cpu",
+          "test",
+          "shims",
+          "prove",
+          "different",
+          "things"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "mindie-reviewed-domain-admission/1",
+  "domain": "infer-ops-compat",
+  "validator_revision": "165c47fb8acae10a4e591ea522fd0de0ba527ad0",
+  "editorial_packet_sha256": [
+    "1cbbc4984273868cf6257e174d7680c57086c59107f3e302a61dc3da4df8639e"
+  ],
+  "evidence_strength": "single_observation",
+  "input_kind": "ecosystem_repo",
+  "input_outcome": "observed",
+  "input_repetitions": 1,
+  "accepted_existing_unit_count": 0,
+  "admitted_unit_ids": [
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+  ],
+  "source_revisions": [
+    "175ef4d49c2072f9233619636f0309f4f88b4e2c"
+  ],
+  "c6": "applied",
+  "correct_condition_query": "matched",
+  "mismatched_revision": "excluded",
+  "missing_revision": "excluded",
+  "exact_ref_readback": "matched",
+  "index": "generated_and_checked",
+  "existing_unit_bytes": "preserved",
+  "source_projection": "actual_single_pass_Gitleaks_and_deterministic_scan_unchanged",
+  "decision_preparation": "Deterministic projection of independently reviewed mechanism and corrections; no new model interpretation.",
+  "formal_publication": "Requires final contract/2 release pin and remote readback.",
+  "model_calls": 0,
+  "framework_execution": 0,
+  "npu_calls": 0,
+  "remote_writes": 0
+}

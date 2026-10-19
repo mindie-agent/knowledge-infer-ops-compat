@@ -1,0 +1,81 @@
+{
+  "closure": {
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
+  },
+  "digest": "6bac804d5e65ae924c175e1eb36e5322dcdec809ad331402cb1829e1168f67dc",
+  "federation": {
+    "corpus": {
+      "automatic": false,
+      "bytes": 3509,
+      "estimated_tokens": 547,
+      "kind": "federation",
+      "path": ".",
+      "unit_ids": [
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "units": 1
+    },
+    "domains": [
+      {
+        "automatic": false,
+        "bytes": 3509,
+        "estimated_tokens": 547,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "deployment",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+        ],
+        "units": 1
+      }
+    ]
+  },
+  "index_build_elapsed_ms": 0.18695800099521875,
+  "index_digest": "3d6114cf2077748c1d36911514dbd938295301ebf3c9d0f6b5b7dabd4d747e51",
+  "leaves": [
+    {
+      "automatic": false,
+      "bytes": 3509,
+      "estimated_tokens": 547,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "deployment/vllm-ascend",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "units": 1
+    }
+  ],
+  "schema": "mindie-shard-topology/1",
+  "two_level_subtrees": [
+    {
+      "automatic": false,
+      "bytes": 3509,
+      "estimated_tokens": 547,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "deployment/vllm-ascend",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "units": 1
+    }
+  ],
+  "unit_count": 1,
+  "units": {
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": {
+      "bytes": 3509,
+      "category": "sop",
+      "content_sha256": "530bcda3284440cd5c9cd132200bf662382f11c651c3f8934fb6091312596056",
+      "domain_path": "deployment/vllm-ascend",
+      "estimated_tokens": 547,
+      "evidence_strength": "single_observation",
+      "inherits_from": [],
+      "path": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md",
+      "tier": "L2"
+    }
+  }
+}

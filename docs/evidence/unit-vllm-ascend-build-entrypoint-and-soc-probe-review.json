@@ -1,0 +1,74 @@
+{
+  "index": 2,
+  "decision": "accepted_subset",
+  "domain": "infer-ops-compat",
+  "level": "L2",
+  "title": "vLLM-Ascend packaging metadata and CPU test shims prove different things",
+  "mechanism": "At vLLM-Ascend revision 175ef4d49c2072f9233619636f0309f4f88b4e2c, setup.py declares platform, general-plugin and service-metric entry points. These strings are distribution metadata; the loader and registration function bodies are outside this source unit. When SOC_VERSION is empty, setup.py queries npu-smi to determine the build target. A missing executable returns an empty chip string and triggers the CPU-only guidance, whereas a non-zero command becomes a separate RuntimeError. tests/ut/conftest.py uses a different npu-smi info probe. Failure installs CPU mocks, including torch.npu.is_available=False. Independently of that probe result, setdefault inserts synthetic A2 build information when vllm_ascend._build_info is absent, and adapt_patch plus custom-op registration subsequently run. Successful unit-test setup therefore does not by itself prove a real device was selected, that native extensions built, or that an entry-point loader executed.",
+  "corrections": [
+    "Do not merge npu-smi command failure with executable absence.",
+    "The build-info setdefault is outside the failed-probe branch.",
+    "Entry-point metadata and test imports are not device acceptance evidence."
+  ],
+  "source_scope": "Root accepted only the rewritten mechanism. Independent Cursor reading and its broader findings remain in the immutable author packet. Root source reading is enumerated separately.",
+  "supporting_ranges": [
+    {
+      "path": "setup.py",
+      "line_start": 74,
+      "line_end": 154,
+      "source_revision": "175ef4d49c2072f9233619636f0309f4f88b4e2c",
+      "source_sha256": "76589ce45019c2f6040387b9acca9a2f971f691ae93c73eb87a45d318474d1e0",
+      "range_sha256": "56afa92e57ba2ec9b8e600f407f86212c7edb63def15c827652fdf53e38d0187",
+      "git_blob_oid": "1d036c14b996bc37fd59c0e08d03e41f9c6590de",
+      "unit_byte_start": 0,
+      "unit_ids": [
+        "source:vllm-ascend:175ef4d49c2072f9233619636f0309f4f88b4e2c:setup.py:0-19719"
+      ],
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/setup.py#L74-L154",
+      "unit_byte_end": 19719
+    },
+    {
+      "path": "setup.py",
+      "line_start": 476,
+      "line_end": 529,
+      "source_revision": "175ef4d49c2072f9233619636f0309f4f88b4e2c",
+      "source_sha256": "76589ce45019c2f6040387b9acca9a2f971f691ae93c73eb87a45d318474d1e0",
+      "range_sha256": "6e78d61c4d91c1161723b448e962262bfeee3c832289afec6cb1e5ec89b04511",
+      "git_blob_oid": "1d036c14b996bc37fd59c0e08d03e41f9c6590de",
+      "unit_byte_start": 0,
+      "unit_ids": [
+        "source:vllm-ascend:175ef4d49c2072f9233619636f0309f4f88b4e2c:setup.py:0-19719"
+      ],
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/setup.py#L476-L529",
+      "unit_byte_end": 19719
+    },
+    {
+      "path": "tests/ut/conftest.py",
+      "line_start": 39,
+      "line_end": 132,
+      "source_revision": "175ef4d49c2072f9233619636f0309f4f88b4e2c",
+      "source_sha256": "864205edccbd5235559f5f0252deaaef63e56e7228ca2a92eeb764b57dcfed19",
+      "range_sha256": "c20f0dc6ed58c95887b6e3bcc15f5e6d0aa19e9123765bde82d0b8807c000d49",
+      "git_blob_oid": "9e6af5493bfeac599fe678df68d2c6c29d392647",
+      "unit_byte_start": 0,
+      "unit_ids": [
+        "source:vllm-ascend:175ef4d49c2072f9233619636f0309f4f88b4e2c:tests/ut/conftest.py:0-7530"
+      ],
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/tests/ut/conftest.py#L39-L132",
+      "unit_byte_end": 7530
+    }
+  ],
+  "source_revision": "175ef4d49c2072f9233619636f0309f4f88b4e2c",
+  "accepted_body_sha256": "f0c7bf6d825828f055033aeaf213c4c21b40e4559664fa5eb87ecfba6287d38c",
+  "adoption_boundary": "Use to diagnose packaging and test-environment differences. Native build, loader execution and device behavior require their own observed results.",
+  "schema_version": "mindie-reviewed-source-record/1",
+  "source_repository": "vllm-project/vllm-ascend",
+  "editorial_packet_sha256": "1cbbc4984273868cf6257e174d7680c57086c59107f3e302a61dc3da4df8639e",
+  "evidence_strength": "single_observation",
+  "execution": "not_performed",
+  "original_artifact_sha256": {
+    "original_review_output": "4eb2314f0a901bde2676c40c125c9883bc28764e618d7d657ee881e7c3673cb0",
+    "original_receipt": "b13dd6deeffb09226f148f20d8ee0d1f9615c79eb8c5bd1f7095a0ff5a4e2de3",
+    "original_admission": "9be00253a95ed873852da98b9a9af7deee6493df0604ffd23c513e40462af79d"
+  }
+}
