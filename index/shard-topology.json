@@ -1,43 +1,98 @@
 {
   "closure": {
+    "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+    ],
+    "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
   },
-  "digest": "6bac804d5e65ae924c175e1eb36e5322dcdec809ad331402cb1829e1168f67dc",
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 3509,
-      "estimated_tokens": 547,
+      "bytes": 74612,
+      "estimated_tokens": 15374,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-mindie-service-config-security-and-npu-memory-budget-sop",
+        "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
         "unit-vllm-ascend-build-entrypoint-and-soc-probe"
       ],
-      "units": 1
+      "units": 5
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 3509,
-        "estimated_tokens": 547,
+        "bytes": 17455,
+        "estimated_tokens": 3512,
         "exceeds": [],
         "kind": "federation",
         "path": "deployment",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-mindie-service-config-security-and-npu-memory-budget-sop",
           "unit-vllm-ascend-build-entrypoint-and-soc-probe"
         ],
+        "units": 2
+      },
+      {
+        "automatic": false,
+        "bytes": 19616,
+        "estimated_tokens": 4096,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "migration",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
+        ],
         "units": 1
+      },
+      {
+        "automatic": false,
+        "bytes": 37541,
+        "estimated_tokens": 7766,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "runtime",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+          "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+        ],
+        "units": 2
       }
     ]
   },
-  "index_build_elapsed_ms": 0.18695800099521875,
-  "index_digest": "3d6114cf2077748c1d36911514dbd938295301ebf3c9d0f6b5b7dabd4d747e51",
+  "index_build_elapsed_ms": 3.4545420203357935,
   "leaves": [
     {
       "automatic": false,
-      "bytes": 3509,
-      "estimated_tokens": 547,
+      "bytes": 14159,
+      "estimated_tokens": 3018,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "deployment/mindie-service",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-service-config-security-and-npu-memory-budget-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 3296,
+      "estimated_tokens": 494,
       "exceeds": [],
       "kind": "leaf",
       "path": "deployment/vllm-ascend",
@@ -46,14 +101,72 @@
         "unit-vllm-ascend-build-entrypoint-and-soc-probe"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 19616,
+      "estimated_tokens": 4096,
+      "exceeds": [
+        "estimated_tokens"
+      ],
+      "kind": "leaf",
+      "path": "migration/cuda-to-npu",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 19300,
+      "estimated_tokens": 3996,
+      "exceeds": [
+        "estimated_tokens"
+      ],
+      "kind": "leaf",
+      "path": "runtime/cann-torch-npu",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 18241,
+      "estimated_tokens": 3770,
+      "exceeds": [
+        "estimated_tokens"
+      ],
+      "kind": "leaf",
+      "path": "runtime/torch-npu",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "units": 1
     }
   ],
   "schema": "mindie-shard-topology/1",
   "two_level_subtrees": [
     {
       "automatic": false,
-      "bytes": 3509,
-      "estimated_tokens": 547,
+      "bytes": 14159,
+      "estimated_tokens": 3018,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "deployment/mindie-service",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-mindie-service-config-security-and-npu-memory-budget-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 3296,
+      "estimated_tokens": 494,
       "exceeds": [],
       "kind": "subtree",
       "path": "deployment/vllm-ascend",
@@ -62,16 +175,107 @@
         "unit-vllm-ascend-build-entrypoint-and-soc-probe"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 19616,
+      "estimated_tokens": 4096,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "migration/cuda-to-npu",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 19300,
+      "estimated_tokens": 3996,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "runtime/cann-torch-npu",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 18241,
+      "estimated_tokens": 3770,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "runtime/torch-npu",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "units": 1
     }
   ],
-  "unit_count": 1,
+  "unit_count": 5,
   "units": {
-    "unit-vllm-ascend-build-entrypoint-and-soc-probe": {
-      "bytes": 3509,
+    "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": {
+      "bytes": 19300,
+      "category": "axiom",
+      "content_sha256": "1627c84587022b71219451c9ce6a5c5fe75b96ff3073e2f3c4398f60e22c2f17",
+      "domain_path": "runtime/cann-torch-npu",
+      "estimated_tokens": 3996,
+      "evidence_strength": "software_contract",
+      "inherits_from": [],
+      "path": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
+      "tier": "L1"
+    },
+    "unit-mindie-service-config-security-and-npu-memory-budget-sop": {
+      "bytes": 14159,
       "category": "sop",
-      "content_sha256": "530bcda3284440cd5c9cd132200bf662382f11c651c3f8934fb6091312596056",
+      "content_sha256": "404363040291bd5488479dcc1eee11ff11f3b5e90301e55d8a41cbc286522d4a",
+      "domain_path": "deployment/mindie-service",
+      "estimated_tokens": 3018,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
+      "tier": "L2"
+    },
+    "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": {
+      "bytes": 19616,
+      "category": "workflow",
+      "content_sha256": "5af30b762699b43b400a18d08f0d86839f29ea90595f60929bfddc7ca593a258",
+      "domain_path": "migration/cuda-to-npu",
+      "estimated_tokens": 4096,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "path": "migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md",
+      "tier": "L3"
+    },
+    "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": {
+      "bytes": 18241,
+      "category": "sop",
+      "content_sha256": "31c79b5fdcda3d58468c364aadc677f19172e396d02b1c5b3af093a9452dd505",
+      "domain_path": "runtime/torch-npu",
+      "estimated_tokens": 3770,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "runtime/torch-npu/unit-torch-npu-custom-op-registration-and-faketensor-meta-sop.md",
+      "tier": "L2"
+    },
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": {
+      "bytes": 3296,
+      "category": "sop",
+      "content_sha256": "5c33bff363a39056c1034d1ac39a37a0028b5a6bc3fe51a6a73ebb8921609ca6",
       "domain_path": "deployment/vllm-ascend",
-      "estimated_tokens": 547,
+      "estimated_tokens": 494,
       "evidence_strength": "single_observation",
       "inherits_from": [],
       "path": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md",
