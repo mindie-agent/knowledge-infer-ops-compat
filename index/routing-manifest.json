@@ -1,27 +1,368 @@
 {
-  "build_elapsed_ms": 0.18695800099521875,
+  "build_elapsed_ms": 3.4545420203357935,
   "closure": {
+    "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+    ],
+    "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
   },
-  "digest": "3d6114cf2077748c1d36911514dbd938295301ebf3c9d0f6b5b7dabd4d747e51",
-  "generation": "4c69ddafaa064f6a2083a53bdb0ba8e17ebf57d0a85c76178843589e534f7be3",
+  "generation": "05951b0c90a28553ba0b53ca0d7b27a76debf062890af8f8ea9966c3038a022f",
   "id_path": {
+    "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
+    "unit-mindie-service-config-security-and-npu-memory-budget-sop": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
+    "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": "migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md",
+    "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": "runtime/torch-npu/unit-torch-npu-custom-op-registration-and-faketensor-meta-sop.md",
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md"
   },
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 1,
+  "unit_count": 5,
   "units": [
     {
+      "category": "axiom",
+      "conditions": {
+        "accelerator": "ascend",
+        "compatibility_scope": "driver-toolkit-kernels-abi-soc",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "runtime/cann-torch-npu",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "inherits_from": [],
+      "inherits_from_closure": [],
+      "path": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-ops-compat-provenance.json",
+          "https://raw.githubusercontent.com/Ascend/pytorch/master/COMPATIBILITY.md",
+          "https://www.hiascend.com/hardware/firmware-drivers/commercial",
+          "https://www.hiascend.com/cann/document",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/common/platforms/concepts/target_ascend910b.md#L33-L43",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/common/platforms/concepts/target_ascend950pr.md#L27-L40",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/ops/ascendc/guides/environments/build_and_runtime_dependency_boundaries.md#L24-L42",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/ops/ascendc/guides/environments/registry_package_architecture_and_runtime_identity.md#L59-L69",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/ops/ascendc/runbooks/compilation/ol_180_cann_env_init_required_for_so_load.md#L24-L34",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/ops/ascendc/optimizations/ol_284_cann_set_env_strict_mode_wrapper.md#L21-L40",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/ascendc-env-check/references/env_config_guide.md#L62-L87",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/ascendc-env-check/references/npu_commands.md#L27-L39"
+        ],
+        "source_digest": "fe3cc021d0d3848cca592eb8d67f8d8fa70a25d7896841d59496572955386b71",
+        "source_locator": "docs/evidence/cannbot-ops-compat-provenance.json",
+        "source_type": "cannbot_knowledge_and_vendor_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "Ascend driver, CANN, torch_npu ABI and SOC_VERSION form one compatibility stack",
+      "token_estimate": 3996,
+      "triggers": {
+        "error_signatures": [
+          "npu-smi: command not found",
+          "aclInit error code 107001",
+          "Invalid device ID",
+          "invalid drv devId",
+          "ImportError: libtorch_npu.so: cannot open shared object file",
+          "ImportError: libhccl.so: cannot open shared object file",
+          "undefined symbol: _ZN",
+          "GLIBCXX_",
+          "AclSetCompileopt(ACL_PRECISION_MODE) error code 500001",
+          "EC0010: Failed to import Python module",
+          "np.float_ was removed in the NumPy 2.0 release",
+          "NPU arch is not supported",
+          "561003",
+          "561107",
+          "HcclReduceScatter error code 15",
+          "EE1001 The value exceeds the total number of cores"
+        ],
+        "keywords": [
+          "ascend",
+          "cann",
+          "hdk",
+          "driver",
+          "firmware",
+          "npu-smi",
+          "torch_npu",
+          "torch",
+          "abi",
+          "glibcxx",
+          "ASCEND_HOME_PATH",
+          "ASCEND_TOOLKIT_HOME",
+          "ASCEND_OPP_PATH",
+          "LD_LIBRARY_PATH",
+          "SOC_VERSION",
+          "Ascend910B1",
+          "Ascend910B4",
+          "Ascend910_93",
+          "Ascend950DT",
+          "Ascend950PR",
+          "arch22",
+          "arch35",
+          "custom_opp"
+        ]
+      }
+    },
+    {
       "category": "sop",
-      "closure_digest": "sha256:61acda65f2c822299a4eed5dae44b9a4ab244656084890fc7cc86ea102e3f3e2",
+      "conditions": {
+        "accelerator": "ascend",
+        "config_schema": "config.json",
+        "service": "mindie-service"
+      },
+      "domain_path": "deployment/mindie-service",
+      "evidence_strength": "software_contract",
+      "id": "unit-mindie-service-config-security-and-npu-memory-budget-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-ops-compat-provenance.json",
+          "https://www.hiascend.com/document/detail/en/mindie/300",
+          "https://www.hiascend.com/document/detail/zh/mindie",
+          "https://www.hiascend.com/document/detail/zh/mindie/230",
+          "https://gitee.com/mindspore/docs/raw/8e9b99c3f76201898cb3750b924c5aa7379a3a30/docs/mindformers/docs/source_zh_cn/guide/deployment.md"
+        ],
+        "source_digest": "fe3cc021d0d3848cca592eb8d67f8d8fa70a25d7896841d59496572955386b71",
+        "source_locator": "docs/evidence/cannbot-ops-compat-provenance.json",
+        "source_type": "mindie_service_contract_and_public_configuration_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "MindIE Service config, TLS permissions and NPU memory budget are one startup contract",
+      "token_estimate": 3018,
+      "triggers": {
+        "error_signatures": [
+          "Check_path: config.json failed",
+          "config.json parse error",
+          "worldSize is inconsistent with npuDeviceIds",
+          "npuMemSize exceeds the available device memory",
+          "npuMemSize caused the service to hang during startup",
+          "httpsEnabled is true but tlsCert or tlsPk is not configured",
+          "tlsPk permission denied",
+          "certificate and private key do not match",
+          "Address already in use",
+          "aclInit error code 107001",
+          "Invalid device ID",
+          "HCCL_CONNECT_TIMEOUT",
+          "maxSeqLen must be greater than maxInputTokenLen"
+        ],
+        "keywords": [
+          "mindie-service",
+          "mindieservice_daemon",
+          "config.json",
+          "worldSize",
+          "npuDeviceIds",
+          "npuMemSize",
+          "maxSeqLen",
+          "maxInputTokenLen",
+          "maxPrefillTokens",
+          "maxPrefillBatchSize",
+          "maxIterTimes",
+          "httpsEnabled",
+          "tlsCert",
+          "tlsPk",
+          "tlsCaFile",
+          "tlsPkPwd",
+          "chmod 640",
+          "certificate",
+          "KV cache",
+          "HBM",
+          "startup exit"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "migration_direction": "cuda-to-npu",
+        "serving_engine": "vllm-ascend",
+        "source_stack": "pytorch-cuda",
+        "target_runtime": "torch_npu"
+      },
+      "domain_path": "migration/cuda-to-npu",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "path": "migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-ops-compat-provenance.json",
+          "receipt://vllm-ascend-evidence/k3-gqa-no-prefix-20260908",
+          "receipt://vllm-ascend-evidence/k3-gqa-no-prefix-20260908/kda-full-operator-regression-fixed.log",
+          "receipt://vllm-ascend-evidence/dsv4-qli-v2-mixed-20260829",
+          "archive://session-material/fla-kda-validation-report",
+          "archive://session-material/flashmla-c8-kernel-results",
+          "repo://vllm-ascend-causal-conv1d/csrc/torch_binding.cpp",
+          "repo://vllm-ascend-causal-conv1d/csrc/torch_binding_meta.cpp",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/model/model-infer-fusion/references/torch_npu_API/torch_npu_list.md#L28-L30",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/torch-ascendc-op-extension/routes/direct-invoke.md#L245-L263",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/model/model-infer-runtime-debug/SKILL.md#L83-L96",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/model/model-infer-graph-mode/SKILL.md#L1-L40"
+        ],
+        "experiment_status": "executed",
+        "reproduction_scope": "Four-stage workflow exercised across live Ascend910_93 service runs, a live Ascend950 ACLGraph operator qualification and live A2/A5 AscendC kernel validation. Not one single-model end-to-end migration.",
+        "source_digest": "fe3cc021d0d3848cca592eb8d67f8d8fa70a25d7896841d59496572955386b71",
+        "source_locator": "docs/evidence/cannbot-ops-compat-provenance.json",
+        "source_type": "multi_run_empirical_synthesis",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Migrate CUDA-oriented PyTorch inference models and kernels to torch_npu and vllm-ascend",
+      "token_estimate": 4096,
+      "triggers": {
+        "error_signatures": [
+          "ModuleNotFoundError: No module named 'flash_attn'",
+          "ModuleNotFoundError: No module named 'causal_conv1d'",
+          "ModuleNotFoundError: No module named 'fla'",
+          "ImportError: libcudart.so",
+          "torch.cuda.CUDAGraph is not available",
+          "NCCL backend is not available",
+          "HCCL_CONNECT_TIMEOUT",
+          "HcclAllReduce error",
+          "triton CompilationError on Ascend",
+          "ACLGraph capture failed or replayed stale metadata",
+          "Meta backend not registered",
+          "custom op absent from the captured graph",
+          "NPU out of memory during capture"
+        ],
+        "keywords": [
+          "cuda-to-npu",
+          "torch_npu",
+          "vllm-ascend",
+          "flash_attn",
+          "npu_fusion_attention",
+          "npu_fused_infer_attention_score",
+          "causal_conv1d",
+          "fla",
+          "triton",
+          "triton-ascend",
+          "nccl",
+          "hccl",
+          "CUDAGraph",
+          "NPUGraph",
+          "npugraph_ex",
+          "TorchAir",
+          "ACLGraph",
+          "piecewise",
+          "AscendC",
+          "register_fake",
+          "Meta"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "custom_op_source": [
+          "ascendc-direct-invoke",
+          "aclnn-registry"
+        ],
+        "operator_interface": "torch.library",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "runtime/torch-npu",
+      "evidence_strength": "software_contract",
+      "id": "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "runtime/torch-npu/unit-torch-npu-custom-op-registration-and-faketensor-meta-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-ops-compat-provenance.json",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/torch-ascendc-op-extension/SKILL.md#L15-L36",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/torch-ascendc-op-extension/routes/aclnn-registry.md#L92-L134",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/torch-ascendc-op-extension/routes/aclnn-registry.md#L155-L192",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/torch-ascendc-op-extension/routes/direct-invoke.md#L59-L88",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/ops/torch-ascendc-op-extension/routes/direct-invoke.md#L147-L175",
+          "https://gitcode.com/cann/cannbot-skills/blob/1fa2cbbc9fdddb4377ca26734e9b94d91c42b975/graph/torch-custom-ops-guide/SKILL.md#L30-L58",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/ops/ascendc/guides/torch_extensions/compilation_and_launch_boundary.md#L22-L38",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/7ea0efbeb79f2559f121fa8514a9fe5c82245807/knowledge/ops/ascendc/guides/torch_extensions/aclnn_symbol_resolution_and_lifetime.md#L22-L30",
+          "receipt://vllm-ascend-evidence/dsv4-qli-v2-mixed-20260829/vendor-symbols.log",
+          "receipt://vllm-ascend-evidence/k3-gqa-no-prefix-20260908/kda-full-operator-regression-fixed.log"
+        ],
+        "source_digest": "fe3cc021d0d3848cca592eb8d67f8d8fa70a25d7896841d59496572955386b71",
+        "source_locator": "docs/evidence/cannbot-ops-compat-provenance.json",
+        "source_type": "cannbot_skill_and_operator_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Bind AscendC and aclnn custom ops into torch.library with a device-free FakeTensor Meta kernel",
+      "token_estimate": 3770,
+      "triggers": {
+        "error_signatures": [
+          "undefined symbol: aclnn",
+          "aclnnXxx or aclnnXxxGetWorkspaceSize not in libopapi.so",
+          "Meta backend not registered",
+          "Meta function not implemented",
+          "torch.ops.<namespace>.<op> is missing",
+          "FakeTensor tried to execute a real NPU kernel",
+          "torch.compile graph break on custom operator",
+          "NPU arch is not supported",
+          "libhccl.so: cannot open shared object file",
+          "no converter registered for torch.ops",
+          "expected dtype"
+        ],
+        "keywords": [
+          "ascend",
+          "torch_npu",
+          "torch.library",
+          "TORCH_LIBRARY",
+          "TORCH_LIBRARY_IMPL",
+          "register_fake",
+          "Meta",
+          "FakeTensor",
+          "aclnn",
+          "AscendC",
+          "EXEC_NPU_CMD",
+          "EXEC_NPU_CMD_V1",
+          "PrivateUse1",
+          "torch.compile",
+          "TorchAir",
+          "npugraph_ex",
+          "ACLGraph",
+          "piecewise",
+          "libcust_opapi",
+          "custom_opp"
+        ]
+      }
+    },
+    {
+      "category": "sop",
       "conditions": {
         "repository": "vllm-project/vllm-ascend",
         "revision": "175ef4d49c2072f9233619636f0309f4f88b4e2c"
       },
-      "content_digest": "sha256:530bcda3284440cd5c9cd132200bf662382f11c651c3f8934fb6091312596056",
-      "content_sha256": "530bcda3284440cd5c9cd132200bf662382f11c651c3f8934fb6091312596056",
       "domain_path": "deployment/vllm-ascend",
       "evidence_strength": "single_observation",
       "id": "unit-vllm-ascend-build-entrypoint-and-soc-probe",
@@ -43,7 +384,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "vLLM-Ascend packaging metadata and CPU test shims prove different things",
-      "token_estimate": 547,
+      "token_estimate": 494,
       "triggers": {
         "error_signatures": [],
         "keywords": [

@@ -1,0 +1,424 @@
+{
+  "schema": "mindie-ops-compat-provenance/1",
+  "domain": "infer-ops-compat",
+  "generated_at_utc": "2026-10-20T17:18:34Z",
+  "purpose": "Single provenance ledger for the four CANNBot-derived environment, custom-op, MindIE Service and CUDA-to-NPU migration units. It records the exact inspected snapshots, the public vendor contracts used where the requested CANNBot paths were absent, the execution receipts that support the reproduced_empirical unit, and the evidence limits of each unit.",
+  "requested_reference_status": {
+    "status": "requested_paths_absent_in_this_snapshot",
+    "requested": [
+      {
+        "path": "cann/cannbot-knowledge/domains/MindIE/runbook.md",
+        "result": "absent"
+      },
+      {
+        "path": "cann/cannbot-knowledge/domains/Torch-NPU/runbook.md",
+        "result": "absent"
+      },
+      {
+        "path": "public/cannbot-skills/skills/cann-env-setup/SKILL.md",
+        "result": "absent"
+      },
+      {
+        "path": "public/cannbot-skills/skills/cann-mindie-service/SKILL.md",
+        "result": "absent"
+      },
+      {
+        "path": "public/cannbot-skills/skills/cann-torch-npu/SKILL.md",
+        "result": "absent"
+      }
+    ],
+    "resolved_substitutes": [
+      {
+        "requested": "cann-env-setup skill",
+        "used": "public/cannbot-skills/ops/cann-env-setup/SKILL.md and public/cannbot-skills/ops/ascendc-env-check/references/{env_config_guide,npu_commands}.md"
+      },
+      {
+        "requested": "cann-torch-npu skill",
+        "used": "public/cannbot-skills/ops/torch-ascendc-op-extension/{SKILL.md,routes/aclnn-registry.md,routes/direct-invoke.md} and public/cannbot-skills/graph/torch-custom-ops-guide/SKILL.md"
+      },
+      {
+        "requested": "cann-mindie-service skill and MindIE runbook",
+        "used": "the public MindIE Service configuration and security contract pages plus the MindIE-compatible deployment sample in the MindSpore deployment guide"
+      },
+      {
+        "requested": "Torch-NPU runbook",
+        "used": "cannbot-knowledge platform and torch-extension guides plus the official TorchNPU compatibility table"
+      }
+    ],
+    "note": "The snapshot has no domains/ directory in cannbot-knowledge and no skills/ directory in cannbot-skills. Units cite what was inspected; they do not fabricate the absent paths."
+  },
+  "source_repositories": [
+    {
+      "id": "cannbot-knowledge",
+      "repository": "cann/cannbot-knowledge",
+      "remote": "https://gitcode.com/cann/cannbot-knowledge",
+      "revision": "7ea0efbeb79f2559f121fa8514a9fe5c82245807",
+      "snapshot_date": "2026-10-19",
+      "files": [
+        {
+          "path": "knowledge/common/platforms/concepts/target_ascend910b.md",
+          "sha256": "9033bbb43795f5547eaaba2950451753e2e6abd846cb66326a1e08f6f84d1a38",
+          "line_ranges": ["33-43", "95-99"],
+          "used_for": "Ascend910B1..B4 SOC strings and SOC_VERSION build flag"
+        },
+        {
+          "path": "knowledge/common/platforms/concepts/target_ascend950pr.md",
+          "sha256": "acc02b60e22323ecdd7dcad08b6bd2572cb232ab9dd61ebcebdc1868c77be963",
+          "line_ranges": ["27-40", "603-609"],
+          "used_for": "Ascend950PR/DT naming, ASCEND950 family and silicon-bin suffix, arch35 compile target"
+        },
+        {
+          "path": "knowledge/ops/ascendc/guides/environments/build_and_runtime_dependency_boundaries.md",
+          "sha256": "808152b039f8948442e0e681d2ee1fa066ebdc3e8d0f94aa5f2b758924c5325f",
+          "line_ranges": ["24-42"],
+          "used_for": "toolkit/ops/custom-package path boundaries, set_env scope and library-resolution evidence"
+        },
+        {
+          "path": "knowledge/ops/ascendc/guides/environments/registry_package_architecture_and_runtime_identity.md",
+          "sha256": "2fdabea82399b4a6173dccc09d079766f64a4cc8ba4d58dffc567327db2c8b7a",
+          "line_ranges": ["59-69"],
+          "used_for": "per-SoC build targets, ascend910b/ascend950/ascend910_93 mapping and multi-SoC pitfalls"
+        },
+        {
+          "path": "knowledge/ops/ascendc/runbooks/compilation/ol_180_cann_env_init_required_for_so_load.md",
+          "sha256": "0a434f1d4709313bf2d4785b9a6560cd6393bbc53d6b5c4829df201703717741",
+          "line_ranges": ["24-34"],
+          "used_for": "CANN environment must be live before torch.ops.load_library; undefined-symbol attribution"
+        },
+        {
+          "path": "knowledge/ops/ascendc/optimizations/ol_284_cann_set_env_strict_mode_wrapper.md",
+          "sha256": "2118572769c00adbe5c6fe88d1d09275cdd2c45c9ebc57d819424552efc2075a",
+          "line_ranges": ["21-40"],
+          "used_for": "source set_env.sh outside strict mode and assert ASCEND_HOME_PATH"
+        },
+        {
+          "path": "knowledge/ops/ascendc/guides/torch_extensions/compilation_and_launch_boundary.md",
+          "sha256": "5d768988f7da3797de3e2ba20d17492ff127917ee264732c64549a69a43f857f",
+          "line_ranges": ["22-38"],
+          "used_for": "build/load/dispatch/execution evidence layers and host ABI checks"
+        },
+        {
+          "path": "knowledge/ops/ascendc/guides/torch_extensions/aclnn_symbol_resolution_and_lifetime.md",
+          "sha256": "86fdd8d9ddc0f35b15845eef977e6de6390fac3a64eac22b2311261625d3eee0",
+          "line_ranges": ["22-30"],
+          "used_for": "ACLNN symbol lookup, process caches and asynchronous resource lifetime"
+        },
+        {
+          "path": "knowledge/ops/ascendc/guides/precision/pytorch_binding_build_guide.md",
+          "sha256": "6d1355173af46f28a12ad9423e4275db8565c098f8893127b519e9ece6500d2a",
+          "line_ranges": ["101-107", "272-294", "416-436"],
+          "used_for": "EXEC_NPU_CMD dlopen path, C++11 ABI and undefined-symbol diagnostics"
+        },
+        {
+          "path": "knowledge/model/inference/runbooks/runtime/bringup_error_root_cause_env_driver_platform.md",
+          "sha256": "05cb93068d39584d04a30411c65ac999264aa2dd374f161d57992540830993f2",
+          "line_ranges": ["37-60", "74-78"],
+          "used_for": "device passthrough, driver-too-old HCCL failure, EC0010 and NumPy/CANN adapter mismatch"
+        }
+      ]
+    },
+    {
+      "id": "cannbot-skills",
+      "repository": "cann/cannbot-skills",
+      "remote": "https://gitcode.com/cann/cannbot-skills",
+      "revision": "1fa2cbbc9fdddb4377ca26734e9b94d91c42b975",
+      "snapshot_date": "2026-10-19",
+      "files": [
+        {
+          "path": "ops/cann-env-setup/SKILL.md",
+          "sha256": "3605f3376c1e70266eac81b063c0fc03fb6186375e8245a0c4a1514835f69b68",
+          "line_ranges": ["20-34", "130-150", "158-164"],
+          "used_for": "driver probe, toolkit-then-ops install order, set_env and version-compatibility caveat"
+        },
+        {
+          "path": "ops/ascendc-env-check/references/env_config_guide.md",
+          "sha256": "07119cf139b3bf14ac617cd5c59eb422bc878f50d7841ec7d3c6db09b77f6cef",
+          "line_ranges": ["62-87"],
+          "used_for": "version.info fields, subpackage matching and official compatibility lookup"
+        },
+        {
+          "path": "ops/ascendc-env-check/references/npu_commands.md",
+          "sha256": "7b753bd5bdc64fdcafd24ddadfcf21d0875cdc4bf9e1ce10ddde47ea1703a947",
+          "line_ranges": ["27-39", "110-114"],
+          "used_for": "npu-smi structured probes and warning that Chip Name is not a reliable SoC identifier"
+        },
+        {
+          "path": "ops/torch-ascendc-op-extension/SKILL.md",
+          "sha256": "2318624c85e55ed366a19fb0e148261dcd608e406fc2668d4c0873346521cce2",
+          "line_ranges": ["15-36", "52-61"],
+          "used_for": "direct-invoke versus aclnn-registry route decision and Meta-backend requirement"
+        },
+        {
+          "path": "ops/torch-ascendc-op-extension/routes/aclnn-registry.md",
+          "sha256": "5e8de9adf859bcba15fd3336c270c2bc73f3de457b904604661f5a8af767f7d1",
+          "line_ranges": ["92-134", "163-192", "208-220"],
+          "used_for": "TORCH_LIBRARY schema, PrivateUse1 and Meta implementations, EXEC_NPU_CMD_V1 and import order"
+        },
+        {
+          "path": "ops/torch-ascendc-op-extension/routes/direct-invoke.md",
+          "sha256": "4dff1cf5ca2ade715b18a522e8255949b05844fe30ca1c0a58204225c04e0fc4",
+          "line_ranges": ["59-88", "147-175", "245-263"],
+          "used_for": "stream(true) queue semantics, TORCH_LIBRARY_FRAGMENT + Meta registration and NPUGraph compatibility"
+        },
+        {
+          "path": "graph/torch-custom-ops-guide/SKILL.md",
+          "sha256": "42a3e40e84f9083e29e79bf3fa41d0cd558909324d965dbc2691648db72b92cf",
+          "line_ranges": ["30-43", "49-58"],
+          "used_for": "register_fake/Meta rules: shape-dtype-device only, no computation"
+        },
+        {
+          "path": "model/model-infer-graph-mode/SKILL.md",
+          "sha256": "eabd0a51cd06bf2f1a73fb78582dda11c635f78cf13f063a48563c3096e635a1",
+          "line_ranges": ["1-40", "70-110"],
+          "used_for": "npugraph_ex versus TorchAir GE modes, ACLGraph capture constraints and cache keys"
+        },
+        {
+          "path": "model/model-infer-runtime-debug/SKILL.md",
+          "sha256": "72d18ebeb59e51c9e64bb67f2fdbc4dbdc6b6bd236429ef71cba94d88668089a",
+          "line_ranges": ["83-96", "203-226"],
+          "used_for": "HCCL/collective and FlashAttention operator constraints during migration"
+        },
+        {
+          "path": "model/model-infer-migrator/SKILL.md",
+          "sha256": "6791bede4dc3939bebb20a6da8fea21cad5196e445fafe363523e8b0f572615d",
+          "line_ranges": ["54-64", "129-168"],
+          "used_for": "environment gate, standard model adaptation and baseline collection"
+        },
+        {
+          "path": "model/model-infer-migrator/references/common_issues.md",
+          "sha256": "281c57ea0907e89bbb927fc54caeb6bfbe9dc30ddaa44116c4010474eb5d9ec2",
+          "line_ranges": ["18-28"],
+          "used_for": "prefill/decode attention-mask shape split during model porting"
+        },
+        {
+          "path": "model/model-infer-fusion/references/torch_npu_API/torch_npu_list.md",
+          "sha256": "fc9c1dd4a76aecadf910d80df21d0aa6caf743002860d7e87b2fc12a6c9b9110",
+          "line_ranges": ["28-30", "40-42", "63-63", "77-77"],
+          "used_for": "CUDA FlashAttention to torch_npu fused-attention API mapping"
+        }
+      ]
+    },
+    {
+      "id": "vllm-ascend-causal-conv1d-port",
+      "repository": "vllm-project/vllm-ascend fork used for the causal-conv1d port",
+      "revision": "de55359d549dfd4c0f9c5a72bf779c520269e04b",
+      "snapshot_date": "2026-08-30",
+      "files": [
+        {
+          "path": "csrc/torch_binding.cpp",
+          "sha256": "f0cb50ba0fd6eced798f6107d53c3e6ed41a5e0a9c438aedd5eebdcda668b4c4",
+          "line_ranges": ["646-676", "2298-2318"],
+          "used_for": "npu_causal_conv1d_custom schema and PrivateUse1 binding after the port"
+        },
+        {
+          "path": "csrc/torch_binding_meta.cpp",
+          "sha256": "e1fcc452679dac89589c3400a38e00b16793f51095da26f42e4baaeb46ef240f",
+          "line_ranges": ["578-588"],
+          "used_for": "matching Meta implementation for the ported causal-conv1d op"
+        },
+        {
+          "path": "tests/e2e/nightly/single_node/ops/singlecard_ops/triton/test_causal_conv1d_update.py",
+          "sha256": "e2c114a290ef1762e91c53704c05656246326a0159ac13e172c79bbaa515f0dd",
+          "line_ranges": ["1-55"],
+          "used_for": "NPU versus CPU-reference regression covering cache indices and max_query_len"
+        }
+      ]
+    },
+    {
+      "id": "legacy-transcript-units",
+      "repository": "user transcript distillation snapshot",
+      "revision": "content snapshot inspected 2026-10-04",
+      "files": [
+        {
+          "path": "_common/unit-vllm-ascend-npu-runtime-and-graph-invariants.md",
+          "sha256": "6ffaf98ee1c66e7a052b1276f9ec68c24178df7de2646ca64b54f83abc3609e8",
+          "used_for": "graph capture, operator binding and NZ/ND layout premises"
+        },
+        {
+          "path": "_common/unit-vllm-ascend-hccl-and-dp-collective-invariants.md",
+          "sha256": "00c815e5fcfee57da4aa8e306b3146e9597ba823d237bf79f2447619bf21eeed",
+          "used_for": "HCCL rank symmetry and idle-rank participation"
+        },
+        {
+          "path": "integration/custom-ops/unit-vllm-ascend-custom-op-gates-import-retry-and-nz.md",
+          "sha256": "6b971485eb1a85995b256d43b098bdaef85b73b62c4db5046f3d01469cb65165",
+          "used_for": "custom-op import retry, partial registration and NZ policy gates"
+        },
+        {
+          "path": "vllm-ascend/runtime/cannbot-runbooks/unit-vllm-ascend-torchair-aclgraph-and-c8-kv-cache-execution-sop.md",
+          "sha256": "1e7cd042efaf1c9d8671c670b3ccf7fc3b878396a27e5a96a8d574fba3c6c50d",
+          "used_for": "piecewise ACLGraph, FakeTensor Meta registration and capture-resource triage"
+        }
+      ]
+    }
+  ],
+  "vendor_contracts": [
+    {
+      "name": "TorchNPU, PyTorch, CANN and Python compatibility table",
+      "url": "https://raw.githubusercontent.com/Ascend/pytorch/master/COMPATIBILITY.md",
+      "sha256": "365e9c1bb65bc2832c2d451489cfea05ba226745b575c2017e9898678be86e8c",
+      "retrieved_at_utc": "2026-10-20T17:18:34Z",
+      "used_for": "torch_npu package-to-torch-to-CANN matching, Python ABI and supported product families"
+    },
+    {
+      "name": "Ascend firmware and driver compatibility entry point",
+      "url": "https://www.hiascend.com/hardware/firmware-drivers/commercial",
+      "retrieved_at_utc": "2026-10-20T17:18:34Z",
+      "used_for": "driver/firmware-to-CANN matching is release-note driven, not inferred from npu-smi health"
+    },
+    {
+      "name": "CANN release notes and version compatibility",
+      "url": "https://www.hiascend.com/cann/document",
+      "retrieved_at_utc": "2026-10-20T17:18:34Z",
+      "used_for": "toolkit, ops and runtime subpackage matching"
+    },
+    {
+      "name": "MindIE Service configuration parameters",
+      "url": "https://www.hiascend.com/document/detail/en/mindie/300/LLMframe/llmdev/user_guide/user_manual/service_parameter_configuration.md",
+      "retrieved_at_utc": "2026-10-20T17:18:34Z",
+      "used_for": "worldSize equal to the number of NPUs in use and the ServerConfig/ModelDeployConfig field family"
+    },
+    {
+      "name": "MindIE-compatible deployment sample",
+      "url": "https://gitee.com/mindspore/docs/raw/8e9b99c3f76201898cb3750b924c5aa7379a3a30/docs/mindformers/docs/source_zh_cn/guide/deployment.md",
+      "retrieved_at_utc": "2026-10-20T17:18:34Z",
+      "used_for": "field semantics for npuMemSize, maxSeqLen, maxInputTokenLen, maxPrefillTokens, maxIterTimes and tlsCaPath/tlsCaFile/tlsCert/tlsPk/tlsPkPwd"
+    },
+    {
+      "name": "MindIE Service HTTPS security warning",
+      "url": "https://www.hiascend.com/document/detail/zh/mindie/21RC1/envdeployment/instg/mindie_instg_0009.html",
+      "retrieved_at_utc": "2026-10-20T17:18:34Z",
+      "used_for": "httpsEnabled=false carries a documented network-security risk"
+    },
+    {
+      "name": "MindIE config path failure page",
+      "url": "https://www.hiascend.com/document/detail/zh/mindie/21RC2/mindiellm/llmdev/mindie_llm0459.html",
+      "retrieved_at_utc": "2026-10-20T17:18:34Z",
+      "used_for": "Check_path: config.json failed startup-exit signature"
+    }
+  ],
+  "execution_receipts": [
+    {
+      "id": "vllm-ascend-k3-gqa-service-20260908",
+      "kind": "live_npu_service",
+      "locator": "receipt://vllm-ascend-evidence/k3-gqa-no-prefix-20260908",
+      "stack": {
+        "torch_npu": "2.10.0.post4.dev20260715",
+        "cann": "9.1.0",
+        "vllm_ascend_revision": "91b90536489c15f136a3a139ebbb3ea5642bab86",
+        "soc_family": "Ascend910_93",
+        "devices": 16
+      },
+      "observed": [
+        "TP8xDP2 and TP16 service runs returned HTTP 200 for all functional requests.",
+        "FULL_DECODE_ONLY ACLGraph with capture sizes 8,16,32,64,128 was used for decode.",
+        "A follow-up 128-concurrency run completed 896/896 requests with 131072 output tokens and health 200.",
+        "TP8 and TP16 greedy outputs matched token-by-token for the corresponding base requests."
+      ],
+      "file_hashes": {
+        "provenance.json": "cdcea813b68c07b0c6f231d2dff5a291f2fe9475ca584462025d9904216a4ef6",
+        "kda-fixed-service-results.json": "cd3d8fc3e152a54c9fad16d61b6f32627149b4f7565f121366f31a337a395b05",
+        "results.json": "9969b9967b1ba02a73b73bc11d991e3b1189904d493b55647853d6e9dff3adf3",
+        "launch.sh": "4bb412b21a9e559b3f2e2fe39aa908836f1a3ccdff92ac2f86cf4eaabf68b905"
+      },
+      "redaction": "Host address, container name and device sub-SKU removed; only stack versions, topology and aggregate outcomes retained."
+    },
+    {
+      "id": "vllm-ascend-kda-operator-regression-20260908",
+      "kind": "live_npu_operator_tests",
+      "locator": "receipt://vllm-ascend-evidence/k3-gqa-no-prefix-20260908/kda-full-operator-regression-fixed.log",
+      "observed": [
+        "21 passed, 5 skipped for the ACLNN custom-op regression in 19.02 s.",
+        "The tests cover padded workspace, BSND layout, C128/V256 path and reference comparison."
+      ],
+      "file_hashes": {
+        "kda-full-operator-regression-fixed.log": "b01dda417371535cd3cf0913deee34d455bdf9c70ab397db5ebcbc2af2acbb15"
+      },
+      "redaction": "No host, device or user identifiers retained."
+    },
+    {
+      "id": "vllm-ascend-dsv4-qliv2-service-20260829",
+      "kind": "live_npu_service",
+      "locator": "receipt://vllm-ascend-evidence/dsv4-qli-v2-mixed-20260829",
+      "stack": {
+        "torch_npu": "2.10.0.post4.dev20260715",
+        "cann": "9.1.0",
+        "serving_stack": "vLLM 0.27.1 with the Ascend plugin",
+        "graph_mode": "npugraph_ex plus FULL_DECODE_ONLY ACLGraph"
+      },
+      "observed": [
+        "107 GPQA-diamond completion cases completed with 98 correct, 0 errors and 0 missing predictions.",
+        "The service log records enable_npugraph_ex and a compiled graph for range 1-10240.",
+        "The vendor library exports aclnnQuantLightningIndexerV2GetWorkspaceSize and aclnnQuantLightningIndexerV2."
+      ],
+      "file_hashes": {
+        "summary.json": "a2c2e1ec2a0a63ded91b26309e475721177bbba5a5f3e94533ebc373f031ed2c",
+        "vendor-symbols.log": "c9721d7fdef6aa80e33074c569cefe59c7f1cffb1f21791c5d72eb6d80c51c14",
+        "start-service.sh": "e1096154537afe8b03e8dd3a0d97bda8557a54e26f2400a38909be8092aea7d2",
+        "service.log": "7b766f656db797cf6275e7d4c8fb525914cddf5837befc183bb5f621abcd3e25"
+      },
+      "redaction": "Host addresses, container identifiers, model mount paths and process IDs removed."
+    },
+    {
+      "id": "fla-kda-ascendc-validation",
+      "kind": "live_npu_operator_validation",
+      "locator": "archive://session-material/work/perf-triage-0919/fla-latest/fla/ops/ascendc/kda/KDA_FORWARD_VALIDATION_REPORT.md",
+      "observed": [
+        "16 C128/V256 forward cases produced finite NPU output; absolute max error 5.21e-6 to 1.55e-5 and cosine 0.9999845 to 0.9999936 against CPU FP32.",
+        "A2 and A5 four-stage KDA runs matched the fla-org Triton reference with bad_ratio 0.",
+        "A5 four-stage AscendC total was about 10.211 ms versus about 11 ms for the Triton reference on the fixed case."
+      ],
+      "file_hashes": {
+        "KDA_FORWARD_VALIDATION_REPORT.md": "d604da812374302a97ac1d3b3fbe64f3d786859d203550115c5ab4653b8ad29d"
+      },
+      "redaction": "Host names, addresses, absolute source paths and personal identifiers removed."
+    },
+    {
+      "id": "flashmla-c8-aclgraph-qualification",
+      "kind": "live_npu_operator_and_graph_validation",
+      "locator": "archive://session-material/work/c8-flashmla-0918/kernel-results.md",
+      "observed": [
+        "CANN 9.2.0 B035 on Ascend950; native and torch-binding builds used the real vLLM-Ascend CMake extension.",
+        "Kernel gate PASS for H12/H96 causal and non-causal, TND/NTD, KV lengths 127/128/129/1025/0, nonzero storage offsets and gapped KV.",
+        "ACLGraph replay updated metadata, lengths and Q across [0,127], [0,0], [128,1024] and [129,1025].",
+        "BF16 legacy qualification passed 65 gates."
+      ],
+      "file_hashes": {
+        "kernel-results.md": "db7ca37aaf4f1cadf136a401e43b0d8de7a2b5058c76a851ea65a32be3543ba5"
+      },
+      "redaction": "Host addresses, user home paths and package staging paths removed."
+    }
+  ],
+  "unit_evidence_map": {
+    "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": {
+      "evidence_strength": "software_contract",
+      "basis": "CANNBot environment/platform guides, the official TorchNPU compatibility table and the CANN/firmware compatibility entry points.",
+      "limits": "The axioms define required compatibility evidence and failure attribution. They do not claim a specific host passed a live NPU run, nor that a healthy npu-smi output proves ABI or kernel-package compatibility."
+    },
+    "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": {
+      "evidence_strength": "software_contract",
+      "basis": "CANNBot PTA route documentation, direct-invoke/aclnn registration templates, Meta/FakeTensor rules, plus vendor-symbol and ACLNN regression receipts.",
+      "limits": "The SOP is not a correctness proof for every custom operator. It establishes route, symbol, schema, Meta and tracing preconditions; numerical acceptance remains an operator-specific test."
+    },
+    "unit-mindie-service-config-security-and-npu-memory-budget-sop": {
+      "evidence_strength": "software_contract",
+      "basis": "Public MindIE Service configuration, security and startup pages plus a MindIE-compatible deployment sample for the config field family and semantics.",
+      "limits": "Exact field names, valid ranges, log paths and default values vary by MindIE release. The SOP requires reading the installed release's schema rather than assuming one version's ranges."
+    },
+    "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": {
+      "evidence_strength": "reproduced_empirical",
+      "basis": "A synthesis of live A3 service receipts (896/896 requests, ACLGraph decode), a live A5 FlashMLA C8 ACLGraph qualification, live A2/A5 FLA AscendC validation and a live ACLNN custom-op regression. The causal-conv1d port supplies the binding/Meta source pattern.",
+      "limits": "This is a multi-run reproduction of the workflow stages, not one CUDA model migrated end-to-end in a single controlled experiment. It does not establish a universal speedup, universal operator coverage or numerical parity for an arbitrary model."
+    }
+  },
+  "privacy": {
+    "absolute_paths_included": false,
+    "identifiers_redacted": [
+      "host addresses and ports",
+      "user and account names",
+      "home and staging directories",
+      "container and process identifiers"
+    ],
+    "rule": "Only repository-relative source paths, commit identifiers, public URLs and aggregate measurements are retained."
+  }
+}
