@@ -1,16 +1,73 @@
 {
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+    ],
+    "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow"
+    ],
     "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
     ],
+    "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
+    ],
+    "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow"
     ],
     "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
       "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+    ],
+    "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+    ],
+    "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop"
     ],
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
@@ -28,21 +85,35 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 92913,
-      "estimated_tokens": 18641,
+      "bytes": 175541,
+      "estimated_tokens": 32188,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms",
+        "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow",
         "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
+        "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
+        "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow",
         "unit-mindie-service-config-security-and-npu-memory-budget-sop",
+        "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop",
+        "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow",
+        "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop",
+        "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow",
         "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow",
+        "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop",
+        "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator",
         "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
         "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
         "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop",
         "unit-vllm-ascend-build-entrypoint-and-soc-probe"
       ],
-      "units": 8
+      "units": 22
     },
     "domains": [
       {
@@ -61,6 +132,28 @@
       },
       {
         "automatic": false,
+        "bytes": 57442,
+        "estimated_tokens": 9424,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "graph",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow",
+          "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
+          "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
+          "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow",
+          "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
+          "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+          "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop",
+          "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow",
+          "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop",
+          "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow"
+        ],
+        "units": 10
+      },
+      {
+        "automatic": false,
         "bytes": 19616,
         "estimated_tokens": 4096,
         "exceeds": [],
@@ -71,6 +164,22 @@
           "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
         ],
         "units": 1
+      },
+      {
+        "automatic": false,
+        "bytes": 25186,
+        "estimated_tokens": 4123,
+        "exceeds": [],
+        "kind": "federation",
+        "path": "registration",
+        "recommended_action": "review_federation_boundary",
+        "unit_ids": [
+          "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop",
+          "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms",
+          "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop",
+          "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator"
+        ],
+        "units": 4
       },
       {
         "automatic": false,
@@ -91,7 +200,7 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 5.196374957449734,
+  "index_build_elapsed_ms": 10.330041986890137,
   "leaves": [
     {
       "automatic": false,
@@ -121,11 +230,79 @@
     },
     {
       "automatic": false,
+      "bytes": 10531,
+      "estimated_tokens": 1755,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/ge-compiler/fusion-passes-and-compile",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
+        "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 9648,
+      "estimated_tokens": 1651,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/ge-compiler/memory-and-coredump",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow",
+        "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 14459,
+      "estimated_tokens": 2562,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/npugraph-ex/architecture-and-passes",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 11509,
+      "estimated_tokens": 1749,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/npugraph-ex/compile-and-guard-diagnosis",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow",
+        "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 11295,
+      "estimated_tokens": 1707,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/npugraph-ex/runtime-and-accuracy-dfx",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
+        "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
       "bytes": 19616,
       "estimated_tokens": 4096,
-      "exceeds": [
-        "estimated_tokens"
-      ],
+      "exceeds": [],
       "kind": "leaf",
       "path": "migration/cuda-to-npu",
       "recommended_action": "review_leaf_split",
@@ -136,11 +313,37 @@
     },
     {
       "automatic": false,
+      "bytes": 12196,
+      "estimated_tokens": 1900,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "registration/custom-ops/aclnn-and-geir",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
+      "bytes": 12990,
+      "estimated_tokens": 2223,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "registration/custom-ops/torch-cpp-extensions",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop",
+        "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator"
+      ],
+      "units": 2
+    },
+    {
+      "automatic": false,
       "bytes": 19300,
       "estimated_tokens": 3996,
-      "exceeds": [
-        "estimated_tokens"
-      ],
+      "exceeds": [],
       "kind": "leaf",
       "path": "runtime/cann-torch-npu",
       "recommended_action": "review_leaf_split",
@@ -166,9 +369,7 @@
       "automatic": false,
       "bytes": 30018,
       "estimated_tokens": 5860,
-      "exceeds": [
-        "estimated_tokens"
-      ],
+      "exceeds": [],
       "kind": "leaf",
       "path": "runtime/torch-npu",
       "recommended_action": "review_leaf_split",
@@ -210,6 +411,40 @@
     },
     {
       "automatic": false,
+      "bytes": 20179,
+      "estimated_tokens": 3406,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "graph/ge-compiler",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
+        "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
+        "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow"
+      ],
+      "units": 4
+    },
+    {
+      "automatic": false,
+      "bytes": 37263,
+      "estimated_tokens": 6018,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "graph/npugraph-ex",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop",
+        "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow",
+        "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop",
+        "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow"
+      ],
+      "units": 6
+    },
+    {
+      "automatic": false,
       "bytes": 19616,
       "estimated_tokens": 4096,
       "exceeds": [],
@@ -220,6 +455,22 @@
         "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
       ],
       "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 25186,
+      "estimated_tokens": 4123,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "registration/custom-ops",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms",
+        "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop",
+        "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator"
+      ],
+      "units": 4
     },
     {
       "automatic": false,
@@ -263,7 +514,7 @@
       "units": 3
     }
   ],
-  "unit_count": 8,
+  "unit_count": 22,
   "units": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": {
       "bytes": 19300,
@@ -276,6 +527,47 @@
       "path": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
       "tier": "L1"
     },
+    "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": {
+      "bytes": 6454,
+      "category": "sop",
+      "content_sha256": "4c0b345492b93685a94ac39d119db8eca326cfaea2287b9a49aef6466e7a398d",
+      "domain_path": "registration/custom-ops/aclnn-and-geir",
+      "estimated_tokens": 1025,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "path": "registration/custom-ops/aclnn-and-geir/unit-ascendc-infershape-tilingdata-and-workspace-registration-sop.md",
+      "tier": "L2"
+    },
+    "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms": {
+      "bytes": 5742,
+      "category": "axiom",
+      "content_sha256": "1620c1669611bc972c8d45d22f709ff0ba76ea54dc60bd777f1c6adca7fbd069",
+      "domain_path": "registration/custom-ops/aclnn-and-geir",
+      "estimated_tokens": 875,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "registration/custom-ops/aclnn-and-geir/unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms.md",
+      "tier": "L1"
+    },
+    "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": {
+      "bytes": 4592,
+      "category": "workflow",
+      "content_sha256": "3306edc7a62de03de010df73ed7c7294fc997a26ced1631d19234c6600d97072",
+      "domain_path": "graph/ge-compiler/memory-and-coredump",
+      "estimated_tokens": 758,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow"
+      ],
+      "path": "graph/ge-compiler/memory-and-coredump/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow.md",
+      "tier": "L3"
+    },
     "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": {
       "bytes": 6524,
       "category": "workflow",
@@ -287,6 +579,46 @@
         "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
       ],
       "path": "runtime/ge/unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow.md",
+      "tier": "L3"
+    },
+    "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop": {
+      "bytes": 5721,
+      "category": "sop",
+      "content_sha256": "e188e5ec44309d53c51ce4e1d5ec6ac1c810d54cdf2fd70263497c55d24a9d52",
+      "domain_path": "graph/ge-compiler/fusion-passes-and-compile",
+      "estimated_tokens": 962,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop.md",
+      "tier": "L2"
+    },
+    "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop": {
+      "bytes": 5056,
+      "category": "sop",
+      "content_sha256": "8f3fdf31ac49d3c24ef8690ea4a51ee2c1d4b19a742a4d764f6763154c8afaa6",
+      "domain_path": "graph/ge-compiler/memory-and-coredump",
+      "estimated_tokens": 893,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "graph/ge-compiler/memory-and-coredump/unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop.md",
+      "tier": "L2"
+    },
+    "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow": {
+      "bytes": 4810,
+      "category": "workflow",
+      "content_sha256": "7845fcecf3885bef5ca60b1ba342bcb73c69417ac745858c965d5582e0226c90",
+      "domain_path": "graph/ge-compiler/fusion-passes-and-compile",
+      "estimated_tokens": 793,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "path": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow.md",
       "tier": "L3"
     },
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": {
@@ -302,6 +634,89 @@
       "path": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
       "tier": "L2"
     },
+    "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": {
+      "bytes": 5278,
+      "category": "sop",
+      "content_sha256": "8a8635a2946dd9e44a531aafba9b4c2ed29180f75e6e6a7f3cfd3c0567568284",
+      "domain_path": "graph/npugraph-ex/runtime-and-accuracy-dfx",
+      "estimated_tokens": 821,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop.md",
+      "tier": "L2"
+    },
+    "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms": {
+      "bytes": 7229,
+      "category": "axiom",
+      "content_sha256": "60c947c3849fb865ed256d01c0a166a28eac69306e5f948b356cc10d2ab04490",
+      "domain_path": "graph/npugraph-ex/architecture-and-passes",
+      "estimated_tokens": 1271,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms.md",
+      "tier": "L1"
+    },
+    "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop": {
+      "bytes": 7230,
+      "category": "sop",
+      "content_sha256": "00876597b6b52708705064378e83102cd8eedd8a286bc49e4285b6c4eba95132",
+      "domain_path": "graph/npugraph-ex/architecture-and-passes",
+      "estimated_tokens": 1291,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop.md",
+      "tier": "L2"
+    },
+    "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow": {
+      "bytes": 5735,
+      "category": "workflow",
+      "content_sha256": "72ee6d688a1487c4a3aacdd2c0790771328773e2643cbc40a6009f28935a6911",
+      "domain_path": "graph/npugraph-ex/compile-and-guard-diagnosis",
+      "estimated_tokens": 823,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
+      ],
+      "path": "graph/npugraph-ex/compile-and-guard-diagnosis/unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow.md",
+      "tier": "L3"
+    },
+    "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop": {
+      "bytes": 5774,
+      "category": "sop",
+      "content_sha256": "e51b43c833a75cc1778e543aa1563ffe5b842307964efb496b319f3c0ad85f9e",
+      "domain_path": "graph/npugraph-ex/compile-and-guard-diagnosis",
+      "estimated_tokens": 926,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/npugraph-ex/compile-and-guard-diagnosis/unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop.md",
+      "tier": "L2"
+    },
+    "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow": {
+      "bytes": 6017,
+      "category": "workflow",
+      "content_sha256": "3015db1853b24084f311694a26e742ec8b42df94bc9bd1483e2aeed538ee98a6",
+      "domain_path": "graph/npugraph-ex/runtime-and-accuracy-dfx",
+      "estimated_tokens": 886,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow"
+      ],
+      "path": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow.md",
+      "tier": "L3"
+    },
     "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": {
       "bytes": 19616,
       "category": "workflow",
@@ -316,6 +731,34 @@
       ],
       "path": "migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md",
       "tier": "L3"
+    },
+    "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop": {
+      "bytes": 5724,
+      "category": "sop",
+      "content_sha256": "0f53d5342db03b3b2a808dde0349b9bf91c65e200e425609d02cbbd1880ff7a8",
+      "domain_path": "registration/custom-ops/torch-cpp-extensions",
+      "estimated_tokens": 897,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "path": "registration/custom-ops/torch-cpp-extensions/unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop.md",
+      "tier": "L2"
+    },
+    "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator": {
+      "bytes": 7266,
+      "category": "mutator",
+      "content_sha256": "11671e2b305bc6ada75e2c9aa7f30d844cee710cb6022e92375b7f36bf592276",
+      "domain_path": "registration/custom-ops/torch-cpp-extensions",
+      "estimated_tokens": 1326,
+      "evidence_strength": "reproduced_empirical",
+      "inherits_from": [
+        "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "path": "registration/custom-ops/torch-cpp-extensions/unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator.md",
+      "tier": "L4"
     },
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": {
       "bytes": 18241,
