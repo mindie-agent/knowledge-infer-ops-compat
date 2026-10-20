@@ -1,17 +1,74 @@
 {
-  "build_elapsed_ms": 5.196374957449734,
+  "build_elapsed_ms": 10.330041986890137,
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+    ],
+    "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow"
+    ],
     "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
     ],
+    "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
+    ],
+    "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow"
     ],
     "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
       "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+    ],
+    "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+    ],
+    "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+      "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop"
     ],
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
@@ -26,12 +83,26 @@
     ],
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
   },
-  "generation": "8b276c8dd2f4c8d571192df59c443867b7e7a6c38ec9acfc9b1f6812555dc3c6",
+  "generation": "e97cbcf63957ae98ad4ca2b8156548ce7c5c919501b4fb84b6531aa4d779c0f4",
   "id_path": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
+    "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": "registration/custom-ops/aclnn-and-geir/unit-ascendc-infershape-tilingdata-and-workspace-registration-sop.md",
+    "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms": "registration/custom-ops/aclnn-and-geir/unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms.md",
+    "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": "graph/ge-compiler/memory-and-coredump/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow.md",
     "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": "runtime/ge/unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow.md",
+    "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop.md",
+    "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop": "graph/ge-compiler/memory-and-coredump/unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop.md",
+    "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow.md",
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
+    "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop.md",
+    "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms.md",
+    "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop.md",
+    "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow": "graph/npugraph-ex/compile-and-guard-diagnosis/unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow.md",
+    "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop": "graph/npugraph-ex/compile-and-guard-diagnosis/unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop.md",
+    "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow.md",
     "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": "migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md",
+    "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop": "registration/custom-ops/torch-cpp-extensions/unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop.md",
+    "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator": "registration/custom-ops/torch-cpp-extensions/unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator.md",
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": "runtime/torch-npu/unit-torch-npu-custom-op-registration-and-faketensor-meta-sop.md",
     "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow": "runtime/torch-npu/unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow.md",
     "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop": "runtime/torch-npu/unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop.md",
@@ -40,7 +111,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 8,
+  "unit_count": 22,
   "units": [
     {
       "category": "axiom",
@@ -126,6 +197,175 @@
       }
     },
     {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "operator_framework": "ascendc-opdef",
+        "registration_layer": "infershape-tiling-and-workspace",
+        "runtime": [
+          "aclnn",
+          "ge"
+        ]
+      },
+      "domain_path": "registration/custom-ops/aclnn-and-geir",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "path": "registration/custom-ops/aclnn-and-geir/unit-ascendc-infershape-tilingdata-and-workspace-registration-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/tiling_func_impl.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/tiling_data_struct_def.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/workspace_tiling.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/infer_shape_impl.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/tiling_key_design.md"
+        ],
+        "source_digest": "332532405ad05edbfa4d41ea424c9adbb27ba27aff66319bedd4ecfd9b2ffb2e",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/tiling_func_impl.md",
+        "source_ref": "cannbot-knowledge:ops/ascendc/guides/registration/tiling_func_impl+workspace_tiling+infer_shape_impl",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "AscendC InferShape, InferDataType, TilingData Struct Alignment, and Workspace Registration SOP",
+      "token_estimate": 1025,
+      "triggers": {
+        "error_signatures": [
+          "TilingFunc GetWorkspaceSizes missing GetLibApiWorkSpaceSize",
+          "BEGIN_TILING_DATA_DEF struct size alignment mismatch",
+          "gert::InferShapeContext GetInputShape null pointer",
+          "REGISTER_TILING_DATA_CLASS missing for OpType"
+        ],
+        "keywords": [
+          "BEGIN_TILING_DATA_DEF",
+          "TILING_DATA_FIELD_DEF",
+          "REGISTER_TILING_DATA_CLASS",
+          "GetLibApiWorkSpaceSize",
+          "gert::TilingContext",
+          "gert::InferShapeContext",
+          "SetTilingKey SetBlockDim"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "accelerator": "ascend",
+        "operator_framework": "ascendc-opdef",
+        "registration_layer": "opdef-geir-aclnn-abi",
+        "runtime": [
+          "aclnn",
+          "ge"
+        ]
+      },
+      "domain_path": "registration/custom-ops/aclnn-and-geir",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "registration/custom-ops/aclnn-and-geir/unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/reg_ascendc_op_overview.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/op_def.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/op_param_def.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/op_aicore_config.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/op_mc2_def.md"
+        ],
+        "source_digest": "1474d6ebf6cd211151b96e4b09da4229b34e64e48fd05d600967e0d2d4d6d46f",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/registration/reg_ascendc_op_overview.md",
+        "source_ref": "cannbot-knowledge:ops/ascendc/guides/registration/op_def+op_param_def+op_aicore_config",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "AscendC OpDef Host Registration, GE IR Prototype Mapping, and Two-Stage aclnn ABI Contract Axioms",
+      "token_estimate": 875,
+      "triggers": {
+        "error_signatures": [
+          "EZ1001 OpPrototype not registered for OpType",
+          "aclnnXxxGetWorkspaceSize returned 161001 ACL_ERROR_INVALID_PARAM",
+          "OpAICoreConfig DataType or Format mismatch with input aclTensor",
+          "OpMC2Def HcclGroup context missing in TilingData"
+        ],
+        "keywords": [
+          "ops::OpDef OP_ADD",
+          "OpParamDef ValueDepend",
+          "OpAICoreConfig AddConfig",
+          "OpMC2Def HcclGroup",
+          "aclnnGetWorkspaceSize two-stage ABI",
+          "aclOpExecutor lifecycle"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "ge",
+        "diagnosis_domain": "ge-gert-host-coredump",
+        "runtime": [
+          "ge",
+          "torch_npu"
+        ]
+      },
+      "domain_path": "graph/ge-compiler/memory-and-coredump",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow"
+      ],
+      "path": "graph/ge-compiler/memory-and-coredump/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-coredump-analysis/SKILL.md"
+        ],
+        "source_digest": "f7d07e3798e5929f24288734b922a8a870897414d27a731fb6ff1cf5232b98f9",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-coredump-analysis/SKILL.md",
+        "source_ref": "cannbot-skills:graph/ge-coredump-analysis",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend GE Compiler and GERT Runtime Host Coredump GDB Stack and Symbol Disassembly Triage Workflow",
+      "token_estimate": 758,
+      "triggers": {
+        "error_signatures": [
+          "SIGSEGV in libge_compiler.so",
+          "SIGSEGV in libgert.so KernelRunContext",
+          "SIGABRT double free or corruption during aclFinalize",
+          "c++filt objdump disassembly GeTensorDesc null dereference"
+        ],
+        "keywords": [
+          "libge_compiler.so coredump",
+          "libgert.so crash",
+          "KernelRunContext GetInputPointer",
+          "gdb bt full disassembly",
+          "aclFinalize teardown crash",
+          "GeTensorDesc null pointer"
+        ]
+      }
+    },
+    {
       "category": "workflow",
       "conditions": {
         "accelerator": "ascend",
@@ -184,6 +424,168 @@
           "reach_theory_rate",
           "PatternFusionPass",
           "coredump"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "ge",
+        "diagnosis_domain": "compile-stage-and-dynamic-shape",
+        "runtime": [
+          "ge",
+          "torch_npu"
+        ]
+      },
+      "domain_path": "graph/ge-compiler/fusion-passes-and-compile",
+      "evidence_strength": "software_contract",
+      "id": "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-compile-analysis/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-dynamic-shape-analysis/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/ge_graph_compile_cache_and_warmup.md"
+        ],
+        "source_digest": "c25b64dec260be9f49edb060c6e71a2454887ebbd0121e1adfd71813235c8399",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-compile-analysis/SKILL.md",
+        "source_ref": "cannbot-skills:graph/ge-compile-analysis+ge-dynamic-shape-analysis",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Ascend GE Graph Compile Stage Timing, Dynamic Shape Unknown-Flag Propagation, and Partition SOP",
+      "token_estimate": 962,
+      "triggers": {
+        "error_signatures": [
+          "[EVENT] GE Trace:CompileGraph stage耗时过长",
+          "MergedUnknownShapeSubGraph partition split static graph",
+          "ge.graph_compiler_cache_dir cache miss recompilation",
+          "SubgraphPartitionAndOptimization dynamic shape fallback"
+        ],
+        "keywords": [
+          "GE CompileGraph stages",
+          "SubgraphPartitionAndOptimization",
+          "MergedUnknownShapeSubGraph",
+          "ge.graph_compiler_cache_dir",
+          "ASCEND_CACHE_PATH warmup",
+          "InferShapeAndType unknown flag"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "ge",
+        "diagnosis_domain": "imas-memory-and-devmm",
+        "runtime": [
+          "ge",
+          "torch_npu"
+        ]
+      },
+      "domain_path": "graph/ge-compiler/memory-and-coredump",
+      "evidence_strength": "software_contract",
+      "id": "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "graph/ge-compiler/memory-and-coredump/unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-memory-analysis/SKILL.md"
+        ],
+        "source_digest": "cd5fb79328f05064447d882b14dd10881def5ac0fbb1020e566ea99d478666d0",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-memory-analysis/SKILL.md",
+        "source_ref": "cannbot-skills:graph/ge-memory-analysis",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Ascend GE IMAS Graph Memory Reuse Ratio, Topological Liveness, and DevMM Allocation Diagnosis SOP",
+      "token_estimate": 893,
+      "triggers": {
+        "error_signatures": [
+          "IMAS reach_theory_rate below threshold",
+          "theory_min_memory_size exceeds HBM budget",
+          "DEVMM_MAX_ALLOW_ALLOC_SIZE physical page exhaustion",
+          "GraphScopeMem SessionScopeMem OOM during GE Build"
+        ],
+        "keywords": [
+          "IMAS memory solver",
+          "reach_theory_rate ratio formula",
+          "theory_min_memory_size",
+          "no_reuse_size",
+          "svm_mem_stats_show devmm table",
+          "GraphScopeMem",
+          "topological liveness interval"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "ge",
+        "diagnosis_domain": "ge-fusion-pass-and-ub-fusion",
+        "runtime": [
+          "ge",
+          "torch_npu"
+        ]
+      },
+      "domain_path": "graph/ge-compiler/fusion-passes-and-compile",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "path": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-pass-analysis/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-overview/SKILL.md"
+        ],
+        "source_digest": "01ef57a1e7f423e760558107f954d7061fb2d418790a771a60ca435d79001f0c",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-pass-analysis/SKILL.md",
+        "source_ref": "cannbot-skills:graph/ge-pass-analysis+ge-overview",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Ascend GE Graph PatternFusionBasePass, UB Buffer Fusion, and Pass Miscompilation Triage Workflow",
+      "token_estimate": 793,
+      "triggers": {
+        "error_signatures": [
+          "PatternFusionBasePass Fusion failed",
+          "BufferFusionPassBase GetFusionNodes topological cycle",
+          "ge_proto_Build.txt pass_name mutation error",
+          "fusionSwitchFile GraphFusion UBFusion bisect"
+        ],
+        "keywords": [
+          "PatternFusionBasePass",
+          "BufferFusionPassBase",
+          "DUMP_GE_GRAPH",
+          "DUMP_GRAPH_LEVEL",
+          "fusionSwitchFile",
+          "UBFusion GraphFusion"
         ]
       }
     },
@@ -259,6 +661,338 @@
           "KV cache",
           "HBM",
           "startup exit"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "diagnosis_domain": "aclgraph-replay-and-address-refresh",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "graph/npugraph-ex/runtime-and-accuracy-dfx",
+      "evidence_strength": "software_contract",
+      "id": "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-runtime-fail/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/aclgraph_static_address_and_tiling_update.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/npugraph_ex_inplace_mutation_and_cache_update_pitfalls.md"
+        ],
+        "source_digest": "e808477b0aa77d371a1181eabd02f0b8ad8c361c4ed876502b442cf039b6104f",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-runtime-fail/SKILL.md",
+        "source_ref": "cannbot-skills:graph/npugraph-ex-runtime-fail+aclgraph_static_address",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "TorchAir npugraph_ex ACLGraph Replay Failure, Dynamic Workspace, and Frozen Address Refresh SOP",
+      "token_estimate": 821,
+      "triggers": {
+        "error_signatures": [
+          "EZ9999 HBM address access fault during ACLGraph replay",
+          "507015 aclmdlRIExecuteAsync failed",
+          "507035 task exception during graph replay",
+          "ACLGraph replay output is stale or identical across decode steps"
+        ],
+        "keywords": [
+          "aclmdlRIExecuteAsync",
+          "frozen data_ptr ACLGraph",
+          "update_node_params tiling",
+          "actual_seq_lengths refresh",
+          "static input buffer copy_",
+          "ACLGraph replay stale output"
+        ]
+      }
+    },
+    {
+      "category": "axiom",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "pipeline_stage": "fx-lowering-and-pass-pipeline",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "graph/npugraph-ex/architecture-and-passes",
+      "evidence_strength": "software_contract",
+      "id": "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-overview/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-architecture/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/graph_mode_torchair_aclgraph.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/superkernel_tiling_schedule.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/multi_stream_execution.md"
+        ],
+        "source_digest": "4c265986bc07bcaa178a44e2e88ff18d5fabbf311274db832b2388c4d91594a0",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-architecture/SKILL.md",
+        "source_ref": "cannbot-skills:graph/npugraph-ex-architecture+npugraph-ex-overview",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L1",
+      "title": "TorchAir npugraph_ex Capture, FX Lowering, and Pass Pipeline Ordering Axioms",
+      "token_estimate": 1271,
+      "triggers": {
+        "error_signatures": [
+          "_optimize_fx pass ordering violation",
+          "AclConcreteGraph capture stream mismatch",
+          "npu_stream_switch scope exited without npu_wait_tensor",
+          "SuperKernel BUILD_TILING FUSE_SCOPE failure"
+        ],
+        "keywords": [
+          "AclConcreteGraph capture",
+          "_optimize_fx pipeline",
+          "npu_stream_switch",
+          "npu_wait_tensor",
+          "SuperKernel FUSE_SCOPE",
+          "decompose_auto_functionalized order",
+          "replace_dynamic_workspace_ops"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "pipeline_stage": "pattern-pass-and-converter",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "graph/npugraph-ex/architecture-and-passes",
+      "evidence_strength": "software_contract",
+      "id": "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-pattern-pass/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-code-playbook/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/model/model-infer-multi-stream/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/torch_compile_graph_breaks_and_unsupported_ops.md"
+        ],
+        "source_digest": "8a71a073a5d43c26c5cdee05d9cbc619ab61ca89fe0ff902ad976292759a9962",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-pattern-pass/SKILL.md",
+        "source_ref": "cannbot-skills:graph/npugraph-ex-pattern-pass+npugraph-ex-code-playbook",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "TorchAir npugraph_ex PatternPass Registration, FX Node Splicing, and Custom Op Converter SOP",
+      "token_estimate": 1291,
+      "triggers": {
+        "error_signatures": [
+          "PatternPassManager register_pattern match failed",
+          "fx.Node meta['val'] missing after replace_all_uses_with",
+          "register_fx_node_ge_converter missing for custom op",
+          "OpOverloadPacket passed instead of OpOverload in pattern search_fn"
+        ],
+        "keywords": [
+          "PatternPassManager",
+          "_register_pattern_passes",
+          "register_fx_node_ge_converter",
+          "extra_check Match",
+          "fx.Graph inserting_before",
+          "node.meta val propagation"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "diagnosis_domain": "dead-code-and-tensor-move",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "graph/npugraph-ex/compile-and-guard-diagnosis",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
+      ],
+      "path": "graph/npugraph-ex/compile-and-guard-diagnosis/unit-npugraph-ex-dead-code-and-redundant-copy-elimination-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-dead-code/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-tensor-move/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-View2Out/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/npugraph_ex_inplace_mutation_and_cache_update_pitfalls.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/index_copy_kv_cache_update.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/rope_cos_sin_cache_indexing.md"
+        ],
+        "source_digest": "530c25ffaf8a08b79f4154f37efa7383e6e91a343c17d06a8780e185dc421e83",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-tensor-move/SKILL.md",
+        "source_ref": "cannbot-skills:graph/npugraph-ex-dead-code",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "TorchAir npugraph_ex Dead Code Pruning, Inplace Mutation, and Redundant Tensor Move Elimination Workflow",
+      "token_estimate": 823,
+      "triggers": {
+        "error_signatures": [
+          "ViewCopy d2d kernel overhead in npugraph_ex profile",
+          "index_copy_ kv_cache_update failed to reinplace",
+          "slice_scatter clone epilogue survived decompose_auto_functionalized",
+          "RoPE cos sin cache gather emits redundant TensorMove"
+        ],
+        "keywords": [
+          "View2Out pass",
+          "ViewCopy elimination",
+          "index_copy_ kv cache",
+          "_prune_dead_code_before",
+          "_dead_code_elimination_pass",
+          "slice_scatter reinplace",
+          "RoPE cache indexing"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "diagnosis_domain": "dynamo-guard-and-graph-break",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "graph/npugraph-ex/compile-and-guard-diagnosis",
+      "evidence_strength": "software_contract",
+      "id": "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/npugraph-ex/compile-and-guard-diagnosis/unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-guard/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-compile-fail/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/torchair_aclgraph_capture_and_custom_op_pitfalls.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/aclgraph_capture_oom_and_stream_limit.md"
+        ],
+        "source_digest": "586a3b5c3fda4455378ada67bbef793329aba64012d2082c279267f056aa3daa",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-guard/SKILL.md",
+        "source_ref": "cannbot-skills:graph/npugraph-ex-guard+npugraph-ex-compile-fail",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "TorchAir npugraph_ex Dynamo Guard Recompilation, Graph Break, and Symbolic Shape Diagnosis SOP",
+      "token_estimate": 926,
+      "triggers": {
+        "error_signatures": [
+          "torch._dynamo hit config.cache_size_limit",
+          "Guard failed on tensor.size",
+          "ACLGraph capture OOM across batch buckets",
+          "aclmdlRICaptureBegin failed: stream count exceeds hardware limit"
+        ],
+        "keywords": [
+          "TORCH_LOGS guards recompiles",
+          "cache_size_limit recompilation",
+          "mark_dynamic batch seq",
+          "ACLGraph batch bucket OOM",
+          "piecewise compilation",
+          "stream limit capture"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "diagnosis_domain": "fx-dump-and-accuracy-bisect",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "graph/npugraph-ex/runtime-and-accuracy-dfx",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow"
+      ],
+      "path": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-accuracy/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-debug/SKILL.md",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-dfx-triage/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/view_transpose_non_contiguous_accuracy_drift.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/runbooks/compilation/fp16_overflow_and_bf16_cast_in_graph_mode.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/optimizations/experience/rules/deterministic_computation_switches.md"
+        ],
+        "source_digest": "2ef9d311872cdde0209f1e9bb4814348cf527609b64217b02ab37c5793107441",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-accuracy/SKILL.md",
+        "source_ref": "cannbot-skills:graph/npugraph-ex-accuracy+npugraph-ex-debug+npugraph-ex-dfx-triage",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "TorchAir npugraph_ex FX Node Tensor Dump, Pass Bisect, and Eager-vs-Graph Accuracy Diagnosis Workflow",
+      "token_estimate": 886,
+      "triggers": {
+        "error_signatures": [
+          "npugraph_ex output diverges from eager mode",
+          "cosine similarity drop after pattern_fusion_pass",
+          "non-contiguous transpose view feeds custom op in graph mode",
+          "FP16 intermediate overflow in fused RMSNorm or Softmax"
+        ],
+        "keywords": [
+          "npugraph-ex-accuracy bisect",
+          "CLOSE_MATMUL_K_SHIFT",
+          "LCCL_DETERMINISTIC",
+          "dump_fx_node tensor comparison",
+          "pattern_fusion_pass ablation",
+          "non-contiguous view accuracy drift"
         ]
       }
     },
@@ -348,6 +1082,113 @@
           "AscendC",
           "register_fake",
           "Meta"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "extension_toolchain": "torch_npu.utils.cpp_extension",
+        "registration_layer": "cpp-extension-and-autograd",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "registration/custom-ops/torch-cpp-extensions",
+      "evidence_strength": "software_contract",
+      "id": "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "path": "registration/custom-ops/torch-cpp-extensions/unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/ops/torch-ascendc-op-extension/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/torch_extensions/overview.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/torch_extensions/extension_build_setup.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/torch_extensions/autograd_function.md"
+        ],
+        "source_digest": "3c09aeabd35c0a9990d5a4a4a7127866b1b9bb62b88dbfdf23cd81ac30223059",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/ops/torch-ascendc-op-extension/SKILL.md",
+        "source_ref": "cannbot-skills:ops/torch-ascendc-op-extension+cannbot-knowledge:torch_extensions",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "PyTorch NPU C++ Extension Build, EXEC_NPU_CMD aclnn Binding, and Custom Autograd Function SOP",
+      "token_estimate": 897,
+      "triggers": {
+        "error_signatures": [
+          "NpuExtension BuildExtension cannot find -lcust_opapi",
+          "c10_npu::getCurrentNPUStream stream mismatch in C++ extension",
+          "torch.autograd.Function backward missing PrivateUse1 registration",
+          "Tensor(a!) schema alias violation in TORCH_LIBRARY"
+        ],
+        "keywords": [
+          "NpuExtension BuildExtension",
+          "c10_npu::getCurrentNPUStream",
+          "ACLRT_LAUNCH_KERNEL",
+          "torch::autograd::Function",
+          "Tensor(a!) inplace schema",
+          "rpath cust_opapi"
+        ]
+      }
+    },
+    {
+      "category": "mutator",
+      "conditions": {
+        "accelerator": "ascend",
+        "extension_toolchain": "torch_npu.utils.cpp_extension",
+        "registration_layer": "custom-op-code-mutator",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "registration/custom-ops/torch-cpp-extensions",
+      "evidence_strength": "reproduced_empirical",
+      "id": "unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator",
+      "inherits_from": [
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-torch-npu-cpp-extension-aclnn-binding-and-autograd-sop"
+      ],
+      "path": "registration/custom-ops/torch-cpp-extensions/unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/ops/torch-ascendc-op-extension/SKILL.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/torch_extensions/custom_ops_torch_library.md",
+          "https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/ops/ascendc/guides/torch_extensions/aclnn_cpp_extension.md"
+        ],
+        "source_digest": "1f4c4516f8162f6b07d621d290d6f3219834cde74ed9bb1a6813b3a0f1bee790",
+        "source_kind": "external_import",
+        "source_locator": "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/ops/torch-ascendc-op-extension/SKILL.md",
+        "source_ref": "cannbot-skills:ops/torch-ascendc-op-extension/references/mode-2+mode-3+mode-4",
+        "source_type": "curated_repo"
+      },
+      "revision": 1,
+      "tier": "L4",
+      "title": "PyTorch NPU Custom Op AscendC Direct Kernel Launch, aclnn Two-Stage Wrapper, and Meta Registration Mutator",
+      "token_estimate": 1326,
+      "triggers": {
+        "error_signatures": [
+          "OpCommand Run failed in custom C++ extension",
+          "EXEC_NPU_CMD_EXT workspace allocation failure",
+          "TORCH_LIBRARY_IMPL AutogradPrivateUse1 missing",
+          "custom op C++ template for aclnn and Meta registration"
+        ],
+        "keywords": [
+          "EXEC_NPU_CMD template",
+          "TORCH_LIBRARY_IMPL PrivateUse1 Meta",
+          "AutogradPrivateUse1 mutator",
+          "at_npu::native::OpCommand",
+          "custom_npu_ops C++ boilerplate"
         ]
       }
     },
