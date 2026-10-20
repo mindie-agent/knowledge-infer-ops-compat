@@ -1,0 +1,64 @@
+{
+  "schema": "mindie-ops-compat-provenance/1",
+  "domain": "infer-ops-compat",
+  "generated_at_utc": "2026-10-21T04:18:00Z",
+  "purpose": "Provenance ledger for CANNBot graph compilation (torch-npugraph-ex) and GE dynamic-shape/memory/coredump/fusion-pass units in infer-ops-compat.",
+  "source_repositories": [
+    {
+      "id": "cannbot-skills",
+      "repository": "cann/cannbot-skills",
+      "remote": "https://gitcode.com/cann/cannbot-skills",
+      "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+      "files": [
+        {
+          "path": "graph/torch-npugraph-ex-dfx-triage/SKILL.md",
+          "sha256": "1af3cb6c1ba18e011ee1e06952d49c071b4db7fb0985928bbd518ed84ce71a80",
+          "line_ranges": ["15-223"],
+          "used_for": "5-step progressive backend triage workflow and compile/runtime/accuracy/performance routing rules"
+        },
+        {
+          "path": "graph/torch-npugraph-ex-compile-error-diagnosis/SKILL.md",
+          "sha256": "a698ff8c14dee24c8250486c6c774dbae7431631d67eb88e4e1dd8e4fef83920",
+          "line_ranges": ["11-83"],
+          "used_for": "Dynamo/FX/AOTAutograd/npugraph_ex compile-time error attribution and 3-repo source lookup"
+        },
+        {
+          "path": "graph/torch-npugraph-ex-runtime-error-diagnosis/SKILL.md",
+          "sha256": "f010c284a0d1530b19e158a8053567a9f45c52f18b38fa1a863ae951185d5de9",
+          "line_ranges": ["11-91"],
+          "used_for": "Post-capture replay runtime error attribution across aclnn, HCCL, stream/event, and HBM allocator"
+        },
+        {
+          "path": "graph/torch-npugraph-ex-performance-diagnosis/SKILL.md",
+          "sha256": "32d60b6077316531910a673236e8f9d7a6f90909474f8fd71e51a55cea6eae44",
+          "line_ranges": ["21-160"],
+          "used_for": "Static FX graph audit for redundant tensor moves, functionalize epilogues, and reinplace pass misses"
+        },
+        {
+          "path": "graph/ge-dynamic-shape-diagnose/SKILL.md",
+          "sha256": "90cb3afb76533f92de4828f38dfd45550703a86ff17139611826cb6d48bbae5a",
+          "line_ranges": ["15-84"],
+          "used_for": "GE unknown-graph dynamic-shape partition diagnosis across GE judgment, GE setting, FE setting, and graph level"
+        },
+        {
+          "path": "graph/ge-memory-analysis/SKILL.md",
+          "sha256": "46102b3b47b7491fed74fd306f3161c1f7bb84076aac2f2f6b218d3378136005",
+          "line_ranges": ["20-160"],
+          "used_for": "GE device HBM attribution via devmm svm_mem_stats_show, imas total/report reuse_rate and reach_theory_rate, and stomping detection"
+        },
+        {
+          "path": "graph/ge-coredump-diagnose/SKILL.md",
+          "sha256": "c6d784aec02b0aed040a0eb99d86169567622f9cbcfb78278c1966792eb885e6",
+          "line_ranges": ["17-160"],
+          "used_for": "GE coredump frame-ownership boundary, P0-P3 material grading, and confidence-bounded root-cause attribution"
+        },
+        {
+          "path": "graph/ge-fusion-pass-skill/SKILL.md",
+          "sha256": "eed1a22b656cc313fe1cfcc5f8d391e15f56e3eaf866bfc2657873804690823a",
+          "line_ranges": ["12-160"],
+          "used_for": "GE custom fusion pass G1, G2, and G3 stage gates and PatternFusionPassV2, DecomposePassV2, and graph_base_pass selection"
+        }
+      ]
+    }
+  ]
+}

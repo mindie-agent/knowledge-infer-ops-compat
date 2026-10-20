@@ -1,7 +1,10 @@
 {
-  "build_elapsed_ms": 3.4545420203357935,
+  "build_elapsed_ms": 5.196374957449734,
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
     ],
@@ -13,20 +16,31 @@
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
     ],
+    "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+    ],
+    "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+    ],
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
   },
-  "generation": "05951b0c90a28553ba0b53ca0d7b27a76debf062890af8f8ea9966c3038a022f",
+  "generation": "8b276c8dd2f4c8d571192df59c443867b7e7a6c38ec9acfc9b1f6812555dc3c6",
   "id_path": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
+    "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": "runtime/ge/unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow.md",
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
     "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow": "migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md",
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": "runtime/torch-npu/unit-torch-npu-custom-op-registration-and-faketensor-meta-sop.md",
+    "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow": "runtime/torch-npu/unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow.md",
+    "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop": "runtime/torch-npu/unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop.md",
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md"
   },
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 5,
+  "unit_count": 8,
   "units": [
     {
       "category": "axiom",
@@ -108,6 +122,68 @@
           "arch22",
           "arch35",
           "custom_opp"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "repository": "cann/cannbot-skills",
+        "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+        "runtime": [
+          "ge",
+          "torch_npu"
+        ]
+      },
+      "domain_path": "runtime/ge",
+      "evidence_strength": "software_contract",
+      "id": "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "runtime/ge/unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-graph-and-ge-provenance.json",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-dynamic-shape-diagnose/SKILL.md#L15-L84",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-memory-analysis/SKILL.md#L20-L160",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-coredump-diagnose/SKILL.md#L17-L160",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-fusion-pass-skill/SKILL.md#L12-L160"
+        ],
+        "source_digest": "46102b3b47b7491fed74fd306f3161c1f7bb84076aac2f2f6b218d3378136005",
+        "source_locator": "docs/evidence/cannbot-graph-and-ge-provenance.json",
+        "source_type": "cannbot_skill_and_compiler_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "GE dynamic-shape unknown-graph partition, devmm/imas HBM reuse analysis, coredump boundary, and custom fusion pass gate workflow",
+      "token_estimate": 1177,
+      "triggers": {
+        "error_signatures": [
+          "SetGraphUnknownFlag",
+          "cannot support no tiling",
+          "force unknown as dynamic tilingDependent",
+          "marked force unknown node forcibly",
+          "svm_mem_stats_show",
+          "libge_compiler.so",
+          "libgert.so"
+        ],
+        "keywords": [
+          "ge",
+          "unknown graph",
+          "dynamic shape",
+          "no tiling",
+          "devmm",
+          "imas",
+          "reuse_rate",
+          "reach_theory_rate",
+          "PatternFusionPass",
+          "coredump"
         ]
       }
     },
@@ -354,6 +430,119 @@
           "piecewise",
           "libcust_opapi",
           "custom_opp"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "repository": "cann/cannbot-skills",
+        "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "runtime/torch-npu",
+      "evidence_strength": "software_contract",
+      "id": "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "path": "runtime/torch-npu/unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-graph-and-ge-provenance.json",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/torch-npugraph-ex-dfx-triage/SKILL.md#L15-L223",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/torch-npugraph-ex-compile-error-diagnosis/SKILL.md#L11-L83",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/torch-npugraph-ex-runtime-error-diagnosis/SKILL.md#L11-L91"
+        ],
+        "source_digest": "1af3cb6c1ba18e011ee1e06952d49c071b4db7fb0985928bbd518ed84ce71a80",
+        "source_locator": "docs/evidence/cannbot-graph-and-ge-provenance.json",
+        "source_type": "cannbot_skill_and_compiler_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Five-step progressive backend triage and compile-vs-runtime root-cause diagnosis workflow for torch.compile npugraph_ex",
+      "token_estimate": 1074,
+      "triggers": {
+        "error_signatures": [
+          "torch._dynamo.exc.Unsupported",
+          "torch._dynamo.exc.BackendCompilerFailed",
+          "npu_fx_compiler failed",
+          "ACL graph capture failed",
+          "force_eager=True succeeds but npugraph_ex fails",
+          "aclnnXxx failed during npugraph_ex replay"
+        ],
+        "keywords": [
+          "npugraph_ex",
+          "torch.compile",
+          "torchair",
+          "aot_eager",
+          "force_eager",
+          "TORCH_COMPILE_DEBUG",
+          "dfx-triage",
+          "graph break"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "accelerator": "ascend",
+        "compiler_backend": "npugraph_ex",
+        "repository": "cann/cannbot-skills",
+        "revision": "f305e200aa4b1e1fed73cd21ff1f083b8df25a1e",
+        "runtime": "torch_npu"
+      },
+      "domain_path": "runtime/torch-npu",
+      "evidence_strength": "software_contract",
+      "id": "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "path": "runtime/torch-npu/unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "docs/evidence/cannbot-graph-and-ge-provenance.json",
+          "https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/torch-npugraph-ex-performance-diagnosis/SKILL.md#L21-L160"
+        ],
+        "source_digest": "32d60b6077316531910a673236e8f9d7a6f90909474f8fd71e51a55cea6eae44",
+        "source_locator": "docs/evidence/cannbot-graph-and-ge-provenance.json",
+        "source_type": "cannbot_skill_and_compiler_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Static FX graph audit SOP for npugraph_ex reinplace pass misses and redundant tensor moves",
+      "token_estimate": 1016,
+      "triggers": {
+        "error_signatures": [
+          "can_inplace return False, will skip reinplacing for node",
+          "possible missed reinplacing opportunities",
+          "Total size of missed opportunities",
+          "reinplace failed, all mutated args(get_item) must have copy epilogues",
+          "cannot find an inplace op for node"
+        ],
+        "keywords": [
+          "npugraph_ex",
+          "reinplace",
+          "reinplace_inplaceable_ops_pass",
+          "reinplace_input_mutated_ops",
+          "decompose_auto_functionalized",
+          "eliminate_self_copy",
+          "tensor move",
+          "auto_functionalized"
         ]
       }
     },

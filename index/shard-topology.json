@@ -1,6 +1,9 @@
 {
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
     ],
@@ -12,23 +15,34 @@
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
     ],
+    "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+    ],
+    "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+    ],
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
   },
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 74612,
-      "estimated_tokens": 15374,
+      "bytes": 92913,
+      "estimated_tokens": 18641,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow",
         "unit-mindie-service-config-security-and-npu-memory-budget-sop",
         "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow",
         "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
+        "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop",
         "unit-vllm-ascend-build-entrypoint-and-soc-probe"
       ],
-      "units": 5
+      "units": 8
     },
     "domains": [
       {
@@ -60,21 +74,24 @@
       },
       {
         "automatic": false,
-        "bytes": 37541,
-        "estimated_tokens": 7766,
+        "bytes": 55842,
+        "estimated_tokens": 11033,
         "exceeds": [],
         "kind": "federation",
         "path": "runtime",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
           "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
-          "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+          "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow",
+          "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+          "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
+          "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
         ],
-        "units": 2
+        "units": 5
       }
     ]
   },
-  "index_build_elapsed_ms": 3.4545420203357935,
+  "index_build_elapsed_ms": 5.196374957449734,
   "leaves": [
     {
       "automatic": false,
@@ -134,8 +151,21 @@
     },
     {
       "automatic": false,
-      "bytes": 18241,
-      "estimated_tokens": 3770,
+      "bytes": 6524,
+      "estimated_tokens": 1177,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "runtime/ge",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 30018,
+      "estimated_tokens": 5860,
       "exceeds": [
         "estimated_tokens"
       ],
@@ -143,9 +173,11 @@
       "path": "runtime/torch-npu",
       "recommended_action": "review_leaf_split",
       "unit_ids": [
-        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
+        "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
       ],
-      "units": 1
+      "units": 3
     }
   ],
   "schema": "mindie-shard-topology/1",
@@ -204,19 +236,34 @@
     },
     {
       "automatic": false,
-      "bytes": 18241,
-      "estimated_tokens": 3770,
+      "bytes": 6524,
+      "estimated_tokens": 1177,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "runtime/ge",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 30018,
+      "estimated_tokens": 5860,
       "exceeds": [],
       "kind": "subtree",
       "path": "runtime/torch-npu",
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
-        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
+        "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
+        "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
       ],
-      "units": 1
+      "units": 3
     }
   ],
-  "unit_count": 5,
+  "unit_count": 8,
   "units": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": {
       "bytes": 19300,
@@ -228,6 +275,19 @@
       "inherits_from": [],
       "path": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
       "tier": "L1"
+    },
+    "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": {
+      "bytes": 6524,
+      "category": "workflow",
+      "content_sha256": "be57c4f44f2b0b5fd3b1fecd7d6788d0fe68dfe96a1ccf5f35ed42cdc6e88ee0",
+      "domain_path": "runtime/ge",
+      "estimated_tokens": 1177,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "runtime/ge/unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow.md",
+      "tier": "L3"
     },
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": {
       "bytes": 14159,
@@ -268,6 +328,34 @@
         "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
       ],
       "path": "runtime/torch-npu/unit-torch-npu-custom-op-registration-and-faketensor-meta-sop.md",
+      "tier": "L2"
+    },
+    "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow": {
+      "bytes": 6130,
+      "category": "workflow",
+      "content_sha256": "3468909020a6d3f778f3329a1812c64aa690bcd390460de086fe622967119776",
+      "domain_path": "runtime/torch-npu",
+      "estimated_tokens": 1074,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "path": "runtime/torch-npu/unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow.md",
+      "tier": "L3"
+    },
+    "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop": {
+      "bytes": 5647,
+      "category": "sop",
+      "content_sha256": "9dcd905c57ded598543ad491b0b3d048d07445f4f093e17ecdc2fbf575441c4b",
+      "domain_path": "runtime/torch-npu",
+      "estimated_tokens": 1016,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
+      ],
+      "path": "runtime/torch-npu/unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop.md",
       "tier": "L2"
     },
     "unit-vllm-ascend-build-entrypoint-and-soc-probe": {
