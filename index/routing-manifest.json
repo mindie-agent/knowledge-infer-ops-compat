@@ -1,13 +1,46 @@
 {
-  "build_elapsed_ms": 10.330041986890137,
+  "build_elapsed_ms": 18.07849993929267,
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
     "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
     ],
     "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
+    "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
+    "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-cann-superkernel-icache-preload-early-start-and-scope-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
+    "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
     ],
     "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
@@ -28,6 +61,10 @@
     ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
     ],
     "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
@@ -81,19 +118,36 @@
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
     ],
-    "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": [],
+    "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+    ],
+    "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-mindie-service-config-security-and-npu-memory-budget-sop"
+    ]
   },
-  "generation": "e97cbcf63957ae98ad4ca2b8156548ce7c5c919501b4fb84b6531aa4d779c0f4",
+  "generation": "3c50d8398d660b63824e7c21099bb2f29ba0619e447c382ff82f781ed0c0ed94",
   "id_path": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
+    "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order/unit-ascend-docker-three-modes-and-driver-firmware-install-sop.md",
     "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": "registration/custom-ops/aclnn-and-geir/unit-ascendc-infershape-tilingdata-and-workspace-registration-sop.md",
     "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms": "registration/custom-ops/aclnn-and-geir/unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms.md",
+    "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow": "migration/atc-converter/onnx-to-om-pipeline/anti-hardcoding-probe-and-precision/unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow.md",
+    "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop": "graph/autofuse/inductor-npu-ext/loopir-schedule-and-att-tiling/unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop.md",
+    "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop": "graph/torchair/ge-vs-npugraph-ex/compile-cache-and-fia-dynamic/unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop.md",
+    "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop": "runtime/multi-stream/cube-vector-and-dbo/core-split-and-event-sync/unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop.md",
+    "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop": "runtime/prefetch/npu-prefetch-l2/depend-window-and-stream-switch/unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop.md",
+    "unit-cann-superkernel-icache-preload-early-start-and-scope-sop": "graph/super-kernel/binary-fusion/icache-preload-and-early-start/unit-cann-superkernel-icache-preload-early-start-and-scope-sop.md",
+    "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop": "deployment/cann-toolchain/toolkit-ops-and-nnal/install-order-and-acl-verify/unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop.md",
     "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": "graph/ge-compiler/memory-and-coredump/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow.md",
     "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow": "runtime/ge/unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow.md",
     "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop.md",
     "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop": "graph/ge-compiler/memory-and-coredump/unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop.md",
     "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow.md",
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
+    "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop": "migration/npu-adapter/code-review-and-smi/cuda-api-audit-and-device-health/unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop.md",
     "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop.md",
     "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms.md",
     "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop": "graph/npugraph-ex/architecture-and-passes/unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop.md",
@@ -106,12 +160,14 @@
     "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop": "runtime/torch-npu/unit-torch-npu-custom-op-registration-and-faketensor-meta-sop.md",
     "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow": "runtime/torch-npu/unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow.md",
     "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop": "runtime/torch-npu/unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop.md",
-    "unit-vllm-ascend-build-entrypoint-and-soc-probe": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md"
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md",
+    "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop": "deployment/vllm-ascend/stack-and-wheelnext/cann-nnal-triton-and-310p-compat/unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop.md",
+    "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow": "deployment/kubernetes/kthena-and-mindie-motor/volcano-crd-and-pd-disagg/unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow.md"
   },
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 22,
+  "unit_count": 33,
   "units": [
     {
       "category": "axiom",
@@ -193,6 +249,55 @@
           "arch22",
           "arch35",
           "custom_opp"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "deployment",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Ascend 310P"
+        ]
+      },
+      "domain_path": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order",
+      "evidence_strength": "software_contract",
+      "id": "unit-ascend-docker-three-modes-and-driver-firmware-install-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order/unit-ascend-docker-three-modes-and-driver-firmware-install-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/ascend-docker/SKILL.md#L1-L160",
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/ascend-npu-driver-install/SKILL.md#L1-L180"
+        ],
+        "source_locator": "Ascend/agent-skills@942f0138aa9c78467507babb09aa9c64c5f534dc:skills/ascend-docker/SKILL.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "Ascend Container & HDK Setup: Driver-Before-Firmware Order and Three Docker Device-Mount Modes SOP",
+      "token_estimate": 1016,
+      "triggers": {
+        "error_signatures": [
+          "drvError",
+          "libascend_hal.so: cannot open shared object file",
+          "/dev/davinci_manager",
+          "ASCEND_VISIBLE_DEVICES"
+        ],
+        "keywords": [
+          "ascend-docker-runtime",
+          "driver-firmware-install",
+          "davinci-manager",
+          "devmm-svm",
+          "hisi-hdc"
         ]
       }
     },
@@ -308,6 +413,355 @@
           "OpMC2Def HcclGroup",
           "aclnnGetWorkspaceSize two-stage ABI",
           "aclOpExecutor lifecycle"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "migration",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Ascend 310P"
+        ]
+      },
+      "domain_path": "migration/atc-converter/onnx-to-om-pipeline/anti-hardcoding-probe-and-precision",
+      "evidence_strength": "software_contract",
+      "id": "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "path": "migration/atc-converter/onnx-to-om-pipeline/anti-hardcoding-probe-and-precision/unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/atc-model-converter/SKILL.md#L1-L210"
+        ],
+        "source_locator": "Ascend/agent-skills@942f0138aa9c78467507babb09aa9c64c5f534dc:skills/atc-model-converter/SKILL.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "ATC ONNX-to-OM Model Conversion: Dynamic Input Probing, Anti-Hardcoding Rules, and Precision Triage Workflow",
+      "token_estimate": 1010,
+      "triggers": {
+        "error_signatures": [
+          "E10001",
+          "E19010",
+          "E40021",
+          "atc --model"
+        ],
+        "keywords": [
+          "atc",
+          "onnx-to-om",
+          "soc-version",
+          "input-shape",
+          "dynamic-batch-size",
+          "precision-mode-v2",
+          "ais-bench"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "graph",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "graph/autofuse/inductor-npu-ext/loopir-schedule-and-att-tiling",
+      "evidence_strength": "software_contract",
+      "id": "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/autofuse/inductor-npu-ext/loopir-schedule-and-att-tiling/unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/models/deepseek_v4/deepseek_v4_autofuse_guide.md#L1-L240"
+        ],
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/models/deepseek_v4/deepseek_v4_autofuse_guide.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "AutoFuse PyTorch Inductor NPU Extension: LoopIR Schedule Space, ATT Dynamic Tiling, and Triton-Ascend Codegen SOP",
+      "token_estimate": 1197,
+      "triggers": {
+        "error_signatures": [
+          "AutoFuse",
+          "torch_npu._inductor",
+          "config.enable_AutoFuse",
+          "ASCEND_LAUNCH_BLOCKING"
+        ],
+        "keywords": [
+          "autofuse",
+          "torch-inductor",
+          "loopir",
+          "att-tiling",
+          "triton-ascend",
+          "deepseek-v4"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "graph",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "graph/torchair/ge-vs-npugraph-ex/compile-cache-and-fia-dynamic",
+      "evidence_strength": "software_contract",
+      "id": "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "path": "graph/torchair/ge-vs-npugraph-ex/compile-cache-and-fia-dynamic/unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/cann/zh/npu_graph_optimization.md#L1-L260"
+        ],
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/cann/zh/npu_graph_optimization.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "CANN Graph Modes: GE Mode vs. npugraph_ex, force_eager, Compile Cache, and Dynamic FIA Selection SOP",
+      "token_estimate": 1091,
+      "triggers": {
+        "error_signatures": [
+          "CompilerConfig",
+          "npugraph_ex",
+          "torchair.ops.npu_CompileCache",
+          "actual_seq_lengths_kv"
+        ],
+        "keywords": [
+          "torchair",
+          "ge-mode",
+          "npugraph-ex",
+          "force-eager",
+          "compile-cache",
+          "npu-fused-infer-attention-score"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "runtime",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "runtime/multi-stream/cube-vector-and-dbo/core-split-and-event-sync",
+      "evidence_strength": "software_contract",
+      "id": "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "runtime/multi-stream/cube-vector-and-dbo/core-split-and-event-sync/unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/cann/zh/multi_stream_principles.md#L1-L235"
+        ],
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/cann/zh/multi_stream_principles.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "CANN Multi-Stream Concurrent Execution: Cube-Vector Parallelism, Dual-Batch Overlap (DBO), and Core Limit SOP",
+      "token_estimate": 1161,
+      "triggers": {
+        "error_signatures": [
+          "npu_stream_switch",
+          "npu_wait_tensor",
+          "limit_cores",
+          "set_stream_limit"
+        ],
+        "keywords": [
+          "multi-stream",
+          "npu-stream-switch",
+          "npu-wait-tensor",
+          "dual-batch-overlap",
+          "dbo",
+          "cube-vector-parallel"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "runtime",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "runtime/prefetch/npu-prefetch-l2/depend-window-and-stream-switch",
+      "evidence_strength": "software_contract",
+      "id": "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "runtime/prefetch/npu-prefetch-l2/depend-window-and-stream-switch/unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/cann/zh/prefetch_principles.md#L1-L215"
+        ],
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/cann/zh/prefetch_principles.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "CANN Weight L2 Prefetch (npu_prefetch): Execution Window, max_size Tuning, and Multi-Stream Cmo SOP",
+      "token_estimate": 1096,
+      "triggers": {
+        "error_signatures": [
+          "torch_npu.npu_prefetch",
+          "torchair.ops.npu_prefetch",
+          "Cmo"
+        ],
+        "keywords": [
+          "npu-prefetch",
+          "l2-cache-prefetch",
+          "cmo",
+          "weight-prefetch",
+          "mte2-bound"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "graph",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "graph/super-kernel/binary-fusion/icache-preload-and-early-start",
+      "evidence_strength": "software_contract",
+      "id": "unit-cann-superkernel-icache-preload-early-start-and-scope-sop",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "path": "graph/super-kernel/binary-fusion/icache-preload-and-early-start/unit-cann-superkernel-icache-preload-early-start-and-scope-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/cann/cann-recipes-infer/blob/3c9266727c2a25bd17d503ad37d189a134ff364b/docs/cann/zh/super_kernel.md#L1-L185"
+        ],
+        "source_locator": "cann/cann-recipes-infer@3c9266727c2a25bd17d503ad37d189a134ff364b:docs/cann/zh/super_kernel.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "CANN SuperKernel Binary Fusion: Scope Decoration, I-Cache Preload, and Operator Early-Start SOP",
+      "token_estimate": 1109,
+      "triggers": {
+        "error_signatures": [
+          "super_kernel",
+          "super_kernel_optimize",
+          "super_kernel_optimize_options",
+          "early_start"
+        ],
+        "keywords": [
+          "superkernel",
+          "super-kernel",
+          "icache-preload",
+          "early-start",
+          "stars-dispatch",
+          "binary-fusion"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "deployment",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Ascend 310P"
+        ]
+      },
+      "domain_path": "deployment/cann-toolchain/toolkit-ops-and-nnal/install-order-and-acl-verify",
+      "evidence_strength": "software_contract",
+      "id": "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "path": "deployment/cann-toolchain/toolkit-ops-and-nnal/install-order-and-acl-verify/unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/cann-operator-env-config/SKILL.md#L1-L165"
+        ],
+        "source_locator": "Ascend/agent-skills@942f0138aa9c78467507babb09aa9c64c5f534dc:skills/cann-operator-env-config/SKILL.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "CANN Toolchain Installation Order: Toolkit -> Kernels -> NNAL (ATB) Layering and Environment Verification SOP",
+      "token_estimate": 925,
+      "triggers": {
+        "error_signatures": [
+          "EZ1001",
+          "Cannot find opp",
+          "libatb.so: cannot open shared object file",
+          "acl.init()"
+        ],
+        "keywords": [
+          "cann-toolkit",
+          "cann-kernels",
+          "cann-nnal",
+          "set-env-sh",
+          "ascend-opp-path"
         ]
       }
     },
@@ -661,6 +1115,58 @@
           "KV cache",
           "HBM",
           "startup exit"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "migration",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Ascend 310P"
+        ]
+      },
+      "domain_path": "migration/npu-adapter/code-review-and-smi/cuda-api-audit-and-device-health",
+      "evidence_strength": "software_contract",
+      "id": "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "path": "migration/npu-adapter/code-review-and-smi/cuda-api-audit-and-device-health/unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/npu-adapter-reviewer/SKILL.md#L1-L250",
+          "https://github.com/Ascend/agent-skills/blob/942f0138aa9c78467507babb09aa9c64c5f534dc/skills/npu-smi/SKILL.md#L1-L213"
+        ],
+        "source_locator": "Ascend/agent-skills@942f0138aa9c78467507babb09aa9c64c5f534dc:skills/npu-adapter-reviewer/SKILL.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "GPU-to-Ascend Migration Audit & npu-smi Device Health/vNPU Management SOP",
+      "token_estimate": 891,
+      "triggers": {
+        "error_signatures": [
+          "torch.cuda",
+          "cudaStreamCreate",
+          "flash_attn_varlen_func",
+          "npu-smi info -t health"
+        ],
+        "keywords": [
+          "npu-adapter-reviewer",
+          "gpu-to-npu-migration",
+          "npu-smi",
+          "ecc-errors",
+          "vnpu-mode",
+          "dmidecode"
         ]
       }
     },
@@ -1428,6 +1934,108 @@
           "prove",
           "different",
           "things"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "domain": "deployment",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C",
+          "Ascend 310P"
+        ]
+      },
+      "domain_path": "deployment/vllm-ascend/stack-and-wheelnext/cann-nnal-triton-and-310p-compat",
+      "evidence_strength": "software_contract",
+      "id": "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "path": "deployment/vllm-ascend/stack-and-wheelnext/cann-nnal-triton-and-310p-compat/unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/installation.md#L1-L260"
+        ],
+        "source_locator": "vllm-project/vllm-ascend@175ef4d49c2072f9233619636f0309f4f88b4e2c:docs/source/installation.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "vLLM-Ascend Stack Compatibility: CANN/NNAL/torch-npu Version Matrix, WheelNext Install, and 310P Triton SOP",
+      "token_estimate": 792,
+      "triggers": {
+        "error_signatures": [
+          "COMPILED_WITH_CXX11_ABI",
+          "undef symbol: _ZN",
+          "No module named 'triton'",
+          "Ascend 310P does not support triton-ascend"
+        ],
+        "keywords": [
+          "vllm-ascend",
+          "wheelnext",
+          "triton-ascend",
+          "cann-nnal",
+          "310p-compatibility",
+          "cxx11-abi"
+        ]
+      }
+    },
+    {
+      "category": "workflow",
+      "conditions": {
+        "domain": "deployment",
+        "hardware": [
+          "Ascend 910B",
+          "Ascend 910C"
+        ]
+      },
+      "domain_path": "deployment/kubernetes/kthena-and-mindie-motor/volcano-crd-and-pd-disagg",
+      "evidence_strength": "software_contract",
+      "id": "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-mindie-service-config-security-and-npu-memory-budget-sop"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-mindie-service-config-security-and-npu-memory-budget-sop"
+      ],
+      "path": "deployment/kubernetes/kthena-and-mindie-motor/volcano-crd-and-pd-disagg/unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow.md",
+      "provenance": {
+        "evidence_refs": [
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/user_guide/deployment_guide/using_volcano_kthena.md#L1-L195",
+          "https://github.com/vllm-project/vllm-ascend/blob/175ef4d49c2072f9233619636f0309f4f88b4e2c/docs/source/user_guide/deployment_guide/using_mindie_motor.md#L1-L150"
+        ],
+        "source_locator": "vllm-project/vllm-ascend@175ef4d49c2072f9233619636f0309f4f88b4e2c:docs/source/user_guide/deployment_guide/using_volcano_kthena.md",
+        "source_type": "source_contract",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L3",
+      "title": "Cloud-Native vLLM-Ascend Orchestration: Volcano Kthena ModelServing CRD and MindIE Motor PD Deployment Workflow",
+      "token_estimate": 894,
+      "triggers": {
+        "error_signatures": [
+          "workload.serving.volcano.sh/v1alpha1",
+          "ModelServing",
+          "huawei.com/Ascend910",
+          "mindie-motor"
+        ],
+        "keywords": [
+          "volcano",
+          "kthena",
+          "modelserving-crd",
+          "mindie-motor",
+          "gang-scheduling",
+          "topology-aware-scheduling"
         ]
       }
     }

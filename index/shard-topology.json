@@ -1,12 +1,45 @@
 {
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
+    "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
     "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
     ],
     "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
+    "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
+    "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
+    "unit-cann-superkernel-icache-preload-early-start-and-scope-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
+      "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
+    "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
     ],
     "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
@@ -27,6 +60,10 @@
     ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+    ],
+    "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
     ],
     "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
@@ -80,25 +117,42 @@
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop"
     ],
-    "unit-vllm-ascend-build-entrypoint-and-soc-probe": []
+    "unit-vllm-ascend-build-entrypoint-and-soc-probe": [],
+    "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+    ],
+    "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-mindie-service-config-security-and-npu-memory-budget-sop"
+    ]
   },
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 175541,
-      "estimated_tokens": 32188,
+      "bytes": 233443,
+      "estimated_tokens": 43370,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
         "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascend-docker-three-modes-and-driver-firmware-install-sop",
         "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop",
         "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms",
+        "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow",
+        "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop",
+        "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop",
+        "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop",
+        "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop",
+        "unit-cann-superkernel-icache-preload-early-start-and-scope-sop",
+        "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop",
         "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow",
         "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow",
         "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
         "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
         "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow",
         "unit-mindie-service-config-security-and-npu-memory-budget-sop",
+        "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop",
         "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
         "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
         "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop",
@@ -111,34 +165,43 @@
         "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
         "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
         "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop",
-        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe",
+        "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop",
+        "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow"
       ],
-      "units": 22
+      "units": 33
     },
     "domains": [
       {
         "automatic": false,
-        "bytes": 17455,
-        "estimated_tokens": 3512,
+        "bytes": 37080,
+        "estimated_tokens": 7139,
         "exceeds": [],
         "kind": "federation",
         "path": "deployment",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-ascend-docker-three-modes-and-driver-firmware-install-sop",
+          "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop",
           "unit-mindie-service-config-security-and-npu-memory-budget-sop",
-          "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+          "unit-vllm-ascend-build-entrypoint-and-soc-probe",
+          "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop",
+          "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow"
         ],
-        "units": 2
+        "units": 6
       },
       {
         "automatic": false,
-        "bytes": 57442,
-        "estimated_tokens": 9424,
+        "bytes": 74478,
+        "estimated_tokens": 12821,
         "exceeds": [],
         "kind": "federation",
         "path": "graph",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop",
+          "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop",
+          "unit-cann-superkernel-icache-preload-early-start-and-scope-sop",
           "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow",
           "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
           "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
@@ -150,20 +213,22 @@
           "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop",
           "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow"
         ],
-        "units": 10
+        "units": 13
       },
       {
         "automatic": false,
-        "bytes": 19616,
-        "estimated_tokens": 4096,
+        "bytes": 29666,
+        "estimated_tokens": 5997,
         "exceeds": [],
         "kind": "federation",
         "path": "migration",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
+          "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow",
+          "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop",
           "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
         ],
-        "units": 1
+        "units": 3
       },
       {
         "automatic": false,
@@ -183,25 +248,66 @@
       },
       {
         "automatic": false,
-        "bytes": 55842,
-        "estimated_tokens": 11033,
+        "bytes": 67033,
+        "estimated_tokens": 13290,
         "exceeds": [],
         "kind": "federation",
         "path": "runtime",
         "recommended_action": "review_federation_boundary",
         "unit_ids": [
           "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+          "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop",
+          "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop",
           "unit-ge-dynamic-shape-partition-memory-imas-and-coredump-triage-workflow",
           "unit-torch-npu-custom-op-registration-and-faketensor-meta-sop",
           "unit-torch-npugraph-ex-five-step-triage-and-compile-runtime-diagnosis-workflow",
           "unit-torch-npugraph-ex-reinplace-and-tensor-move-performance-audit-sop"
         ],
-        "units": 5
+        "units": 7
       }
     ]
   },
-  "index_build_elapsed_ms": 10.330041986890137,
+  "index_build_elapsed_ms": 18.07849993929267,
   "leaves": [
+    {
+      "automatic": false,
+      "bytes": 4887,
+      "estimated_tokens": 925,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "deployment/cann-toolchain/toolkit-ops-and-nnal/install-order-and-acl-verify",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5350,
+      "estimated_tokens": 1016,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-ascend-docker-three-modes-and-driver-firmware-install-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5012,
+      "estimated_tokens": 894,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "deployment/kubernetes/kthena-and-mindie-motor/volcano-crd-and-pd-disagg",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow"
+      ],
+      "units": 1
+    },
     {
       "automatic": false,
       "bytes": 14159,
@@ -225,6 +331,32 @@
       "recommended_action": "review_leaf_split",
       "unit_ids": [
         "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 4376,
+      "estimated_tokens": 792,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "deployment/vllm-ascend/stack-and-wheelnext/cann-nnal-triton-and-310p-compat",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5921,
+      "estimated_tokens": 1197,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/autofuse/inductor-npu-ext/loopir-schedule-and-att-tiling",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop"
       ],
       "units": 1
     },
@@ -300,6 +432,45 @@
     },
     {
       "automatic": false,
+      "bytes": 5579,
+      "estimated_tokens": 1109,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/super-kernel/binary-fusion/icache-preload-and-early-start",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-superkernel-icache-preload-early-start-and-scope-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5536,
+      "estimated_tokens": 1091,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/torchair/ge-vs-npugraph-ex/compile-cache-and-fia-dynamic",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5216,
+      "estimated_tokens": 1010,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "migration/atc-converter/onnx-to-om-pipeline/anti-hardcoding-probe-and-precision",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 19616,
       "estimated_tokens": 4096,
       "exceeds": [],
@@ -308,6 +479,19 @@
       "recommended_action": "review_leaf_split",
       "unit_ids": [
         "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 4834,
+      "estimated_tokens": 891,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "migration/npu-adapter/code-review-and-smi/cuda-api-audit-and-device-health",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop"
       ],
       "units": 1
     },
@@ -367,6 +551,32 @@
     },
     {
       "automatic": false,
+      "bytes": 5759,
+      "estimated_tokens": 1161,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "runtime/multi-stream/cube-vector-and-dbo/core-split-and-event-sync",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5432,
+      "estimated_tokens": 1096,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "runtime/prefetch/npu-prefetch-l2/depend-window-and-stream-switch",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 30018,
       "estimated_tokens": 5860,
       "exceeds": [],
@@ -383,6 +593,45 @@
   ],
   "schema": "mindie-shard-topology/1",
   "two_level_subtrees": [
+    {
+      "automatic": false,
+      "bytes": 4887,
+      "estimated_tokens": 925,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "deployment/cann-toolchain/toolkit-ops-and-nnal",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5350,
+      "estimated_tokens": 1016,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "deployment/container-and-driver/ascend-docker-and-hdk",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-ascend-docker-three-modes-and-driver-firmware-install-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5012,
+      "estimated_tokens": 894,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "deployment/kubernetes/kthena-and-mindie-motor",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow"
+      ],
+      "units": 1
+    },
     {
       "automatic": false,
       "bytes": 14159,
@@ -406,6 +655,32 @@
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
         "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 4376,
+      "estimated_tokens": 792,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "deployment/vllm-ascend/stack-and-wheelnext",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5921,
+      "estimated_tokens": 1197,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "graph/autofuse/inductor-npu-ext",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop"
       ],
       "units": 1
     },
@@ -445,6 +720,45 @@
     },
     {
       "automatic": false,
+      "bytes": 5579,
+      "estimated_tokens": 1109,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "graph/super-kernel/binary-fusion",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-cann-superkernel-icache-preload-early-start-and-scope-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5536,
+      "estimated_tokens": 1091,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "graph/torchair/ge-vs-npugraph-ex",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5216,
+      "estimated_tokens": 1010,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "migration/atc-converter/onnx-to-om-pipeline",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 19616,
       "estimated_tokens": 4096,
       "exceeds": [],
@@ -453,6 +767,19 @@
       "recommended_action": "review_two_level_subtree_split",
       "unit_ids": [
         "unit-pytorch-cuda-to-torch-npu-serving-migration-workflow"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 4834,
+      "estimated_tokens": 891,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "migration/npu-adapter/code-review-and-smi",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop"
       ],
       "units": 1
     },
@@ -500,6 +827,32 @@
     },
     {
       "automatic": false,
+      "bytes": 5759,
+      "estimated_tokens": 1161,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "runtime/multi-stream/cube-vector-and-dbo",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 5432,
+      "estimated_tokens": 1096,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "runtime/prefetch/npu-prefetch-l2",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
       "bytes": 30018,
       "estimated_tokens": 5860,
       "exceeds": [],
@@ -514,7 +867,7 @@
       "units": 3
     }
   ],
-  "unit_count": 22,
+  "unit_count": 33,
   "units": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": {
       "bytes": 19300,
@@ -526,6 +879,19 @@
       "inherits_from": [],
       "path": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
       "tier": "L1"
+    },
+    "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": {
+      "bytes": 5350,
+      "category": "sop",
+      "content_sha256": "c52afbbd7582506d0cd94eb7dc06fcccb7311f6da5e4bad0eab2bb3c11487607",
+      "domain_path": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order",
+      "estimated_tokens": 1016,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
+      ],
+      "path": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order/unit-ascend-docker-three-modes-and-driver-firmware-install-sop.md",
+      "tier": "L2"
     },
     "unit-ascendc-infershape-tilingdata-and-workspace-registration-sop": {
       "bytes": 6454,
@@ -553,6 +919,101 @@
       ],
       "path": "registration/custom-ops/aclnn-and-geir/unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms.md",
       "tier": "L1"
+    },
+    "unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow": {
+      "bytes": 5216,
+      "category": "workflow",
+      "content_sha256": "179d98ac3c0e4a030b04b4442a34267fb5da84c8b9adbef31dcd54d4dc3987d9",
+      "domain_path": "migration/atc-converter/onnx-to-om-pipeline/anti-hardcoding-probe-and-precision",
+      "estimated_tokens": 1010,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+      ],
+      "path": "migration/atc-converter/onnx-to-om-pipeline/anti-hardcoding-probe-and-precision/unit-atc-onnx-to-om-input-probe-and-precision-verification-workflow.md",
+      "tier": "L3"
+    },
+    "unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop": {
+      "bytes": 5921,
+      "category": "sop",
+      "content_sha256": "8fade062430ecd6d180082d5715187208a3ec80ffe3fc90d8bcaa6980a548a04",
+      "domain_path": "graph/autofuse/inductor-npu-ext/loopir-schedule-and-att-tiling",
+      "estimated_tokens": 1197,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/autofuse/inductor-npu-ext/loopir-schedule-and-att-tiling/unit-cann-autofuse-inductor-loopir-schedule-and-att-tiling-sop.md",
+      "tier": "L2"
+    },
+    "unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop": {
+      "bytes": 5536,
+      "category": "sop",
+      "content_sha256": "5009cae4cfac089be6a9a07cf9155ee49461157b02433cfa0c9b0bdab6674203",
+      "domain_path": "graph/torchair/ge-vs-npugraph-ex/compile-cache-and-fia-dynamic",
+      "estimated_tokens": 1091,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/torchair/ge-vs-npugraph-ex/compile-cache-and-fia-dynamic/unit-cann-ge-graph-vs-npugraph-ex-compile-cache-and-fia-sop.md",
+      "tier": "L2"
+    },
+    "unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop": {
+      "bytes": 5759,
+      "category": "sop",
+      "content_sha256": "3883afa698d9d3d2c2e8077ab351b2c3cbc20ce94f919b72bd27f1ddb5ea9a7b",
+      "domain_path": "runtime/multi-stream/cube-vector-and-dbo/core-split-and-event-sync",
+      "estimated_tokens": 1161,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "runtime/multi-stream/cube-vector-and-dbo/core-split-and-event-sync/unit-cann-multi-stream-cube-vector-split-and-dbo-overlap-sop.md",
+      "tier": "L2"
+    },
+    "unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop": {
+      "bytes": 5432,
+      "category": "sop",
+      "content_sha256": "b32f0dfd66edf29d374c3e740985cf335eec6ba181e4fab939da118457e5cc52",
+      "domain_path": "runtime/prefetch/npu-prefetch-l2/depend-window-and-stream-switch",
+      "estimated_tokens": 1096,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "runtime/prefetch/npu-prefetch-l2/depend-window-and-stream-switch/unit-cann-npu-prefetch-weight-l2-window-and-stream-switch-sop.md",
+      "tier": "L2"
+    },
+    "unit-cann-superkernel-icache-preload-early-start-and-scope-sop": {
+      "bytes": 5579,
+      "category": "sop",
+      "content_sha256": "dab19c059f981080b1686e65582e0566e700e8e7469ffe58413d30e91b257add",
+      "domain_path": "graph/super-kernel/binary-fusion/icache-preload-and-early-start",
+      "estimated_tokens": 1109,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/super-kernel/binary-fusion/icache-preload-and-early-start/unit-cann-superkernel-icache-preload-early-start-and-scope-sop.md",
+      "tier": "L2"
+    },
+    "unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop": {
+      "bytes": 4887,
+      "category": "sop",
+      "content_sha256": "9686032fc796ad62841a493df85ab7a245085718057db528b27702fb5f7dba6d",
+      "domain_path": "deployment/cann-toolchain/toolkit-ops-and-nnal/install-order-and-acl-verify",
+      "estimated_tokens": 925,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "path": "deployment/cann-toolchain/toolkit-ops-and-nnal/install-order-and-acl-verify/unit-cann-toolkit-ops-nnal-install-order-and-acl-verify-sop.md",
+      "tier": "L2"
     },
     "unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow": {
       "bytes": 4592,
@@ -632,6 +1093,20 @@
         "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
       ],
       "path": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
+      "tier": "L2"
+    },
+    "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop": {
+      "bytes": 4834,
+      "category": "sop",
+      "content_sha256": "2eebabc6cc55331ae3394d79b75660702ce07acb71a62ffd861de9aa59b0e2d8",
+      "domain_path": "migration/npu-adapter/code-review-and-smi/cuda-api-audit-and-device-health",
+      "estimated_tokens": 891,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-ascendc-opdef-geir-proto-and-aclnn-two-stage-abi-axioms"
+      ],
+      "path": "migration/npu-adapter/code-review-and-smi/cuda-api-audit-and-device-health/unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop.md",
       "tier": "L2"
     },
     "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": {
@@ -811,6 +1286,34 @@
       "inherits_from": [],
       "path": "deployment/vllm-ascend/unit-vllm-ascend-build-entrypoint-and-soc-probe.md",
       "tier": "L2"
+    },
+    "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop": {
+      "bytes": 4376,
+      "category": "sop",
+      "content_sha256": "949edfec5860cb0291849f521c889a1852c3bd55c514d724d7fee5d72459d14b",
+      "domain_path": "deployment/vllm-ascend/stack-and-wheelnext/cann-nnal-triton-and-310p-compat",
+      "estimated_tokens": 792,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-vllm-ascend-build-entrypoint-and-soc-probe"
+      ],
+      "path": "deployment/vllm-ascend/stack-and-wheelnext/cann-nnal-triton-and-310p-compat/unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop.md",
+      "tier": "L2"
+    },
+    "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow": {
+      "bytes": 5012,
+      "category": "workflow",
+      "content_sha256": "14396dabcf62714eab6762c29f930ad02c09bb2a128bd1ac39409db8ed00a7a0",
+      "domain_path": "deployment/kubernetes/kthena-and-mindie-motor/volcano-crd-and-pd-disagg",
+      "estimated_tokens": 894,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-mindie-service-config-security-and-npu-memory-budget-sop"
+      ],
+      "path": "deployment/kubernetes/kthena-and-mindie-motor/volcano-crd-and-pd-disagg/unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow.md",
+      "tier": "L3"
     }
   }
 }
