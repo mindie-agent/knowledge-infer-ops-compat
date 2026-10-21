@@ -81,7 +81,7 @@ _prune_dead_code_before
 
 | Workload Phase | Primary Bottleneck | Recommended Execution Mode | Architectural Rationale |
 |---|---|---|---|
-| **Prefill (Large $B 	imes S$)** | AI Core Cube/Vector compute & HBM bandwidth | **Eager (`force_eager=True`)** or **Chunked Prefill** | Single-op execution time ($> 500\,\mu\text{s}$) dominates host dispatch latency ($\sim 5\text{--}10\,\mu\text{s}$); graph capture across variable prompt lengths causes frequent Guard recompilation and static memory duplication. |
+| **Prefill (Large $B \times S$)** | AI Core Cube/Vector compute & HBM bandwidth | **Eager (`force_eager=True`)** or **Chunked Prefill** | Single-op execution time ($> 500\,\mu\text{s}$) dominates host dispatch latency ($\sim 5\text{--}10\,\mu\text{s}$); graph capture across variable prompt lengths causes frequent Guard recompilation and static memory duplication. |
 | **Decode (Small $B$, $S = 1$)** | Host Python/C++ `aclnn` dispatch & task launch | **ACLGraph (`npugraph_ex` / `piecewise`)** | Decode step operators execute in $2\text{--}20\,\mu\text{s}$, leaving NPU streams starved behind host launch overhead; `ACLGraph` replays the entire step in a single runtime submission. |
 | **Decode Ultra-Low Latency** | Task Scheduler (TS) inter-kernel launch bubbles | **ACLGraph + SuperKernel** | Fuses adjacent AICore kernels inside a `FUSE_SCOPE` into one mega-kernel via `BUILD_TILING` -> `ADD_BINARY` -> `LAUNCH_SUPER_KERNEL`, eliminating TS scheduling gaps between small operators. |
 

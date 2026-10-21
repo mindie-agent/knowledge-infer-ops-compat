@@ -70,11 +70,11 @@ $$
 |---|---|---|
 | `theory_min_memory_size` itself exceeds available HBM | Peak simultaneous live tensor volume at the worst topological cut is too high | **(1)** Long-range residual/skip connections or prefetched weights kept live across the entire graph (`first_use` near node 0, `last_use` near final node); **(2)** Parallel multi-stream branches whose lifespans overlap completely without event serialization; **(3)** Excessive operator `atomic_clean` workspace sizes. Tighten topological liveness by delaying producer execution closer to consumer or bounding batch/sequence gear. |
 | `theory_min_memory_size` fits HBM, but `reach_theory_rate < 0.70` (`total_malloc_size` bloated) | IMAS static offset solver suffers severe block fragmentation | Large and small tensors alternate in allocation/free order, splitting contiguous virtual blocks. Enable memory defragmentation / topological memory priority sorting or share static memory pools across multi-gear graphs (`GE_USE_STATIC_MEMORY=1` / `ge.exec.memoryOptimizationPolicy`). |
-| Both `total_malloc_size` and `VarMem` are small, yet `svm_mem_stats_show` fails | HBM is consumed outside GE `GraphScopeMem` | Audit PyTorch eager `NPUCachingAllocator` reserved pool (`torch.npu.memory_summary()`), HCCL communicator count $	imes$ `HCCL_BUFFSIZE`, or leaked dynamic-shape `MergedUnknownShapeSubGraph` runtime allocations. |
+| Both `total_malloc_size` and `VarMem` are small, yet `svm_mem_stats_show` fails | HBM is consumed outside GE `GraphScopeMem` | Audit PyTorch eager `NPUCachingAllocator` reserved pool (`torch.npu.memory_summary()`), HCCL communicator count $\times$ `HCCL_BUFFSIZE`, or leaked dynamic-shape `MergedUnknownShapeSubGraph` runtime allocations. |
 
 ## 3. Auditing Long-Lived Tensors in `ge_proto_*_Build.txt`
 
 To identify which tensors inflate `theory_min_memory_size`:
 1. Parse node topological indices (`id: <int>`) and output tensor byte sizes (`size` attr in `output_desc`) from `ge_proto_*_Build.txt`.
-2. For each tensor $t$ produced at node $u$ and last consumed at node $v$, compute lifespan $\Delta(t) = v - u$ and byte-lifespan product $	ext{size}(t) 	imes \Delta(t)$.
-3. Tensors with large $	ext{size}(t) 	imes \Delta(t)$ (such as unfreed pre-attention full-sequence activations or duplicated cast buffers) should be recomputed locally or scheduled immediately before their consumer.
+2. For each tensor $t$ produced at node $u$ and last consumed at node $v$, compute lifespan $\Delta(t) = v - u$ and byte-lifespan product $\text{size}(t) \times \Delta(t)$.
+3. Tensors with large $\text{size}(t) \times \Delta(t)$ (such as unfreed pre-attention full-sequence activations or duplicated cast buffers) should be recomputed locally or scheduled immediately before their consumer.
