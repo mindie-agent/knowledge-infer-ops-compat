@@ -12,7 +12,7 @@
   <a href="https://github.com/mindie-agent/mindie-agent"><img src="https://img.shields.io/badge/MindIE%20Agent-Ecosystem-7045f5.svg" alt="MindIE Agent"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/Schema-mindie--graded--unit%2F1-0f766e.svg" alt="Schema mindie-graded-unit/1"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/domain-infer--ops--compat-0284c7.svg" alt="Domain infer-ops-compat"></a>
-  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-22%20Units-d97757.svg" alt="22 Graded Units"></a>
+  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-34%20Units-d97757.svg" alt="34 Graded Units"></a>
   <a href="./index/shard-topology.json"><img src="https://img.shields.io/badge/Levels-L1%20to%20L4-10a37f.svg" alt="Levels L1-L4"></a>
 </p>
 
@@ -81,11 +81,11 @@ Once installed, the native host plugin connects to the [`mindie-knowledge`](http
 
 ## 🏗️ Domain Overview & L1–L4 Graded Architecture
 
-This repository hosts the **`infer-ops-compat` graded domain knowledge corpus** for MindIE Agent (**22 graded units**: `L1: 3`, `L2: 11`, `L3: 7`, `L4: 1`). Focusing on the bridge layer between PyTorch / `torch_npu` and the Ascend CANN graph compiler stack (GE / GERT / TorchAir `npugraph_ex` / ACLGraph), it covers FX graph capture & pass pipeline ordering axioms, dynamic-shape unknown-graph partitioning & IMAS/DevMM static memory reuse, ACLGraph frozen-address refresh & D2H sync guard triage, AscendC `OpDef` / GE IR prototype & two-stage `aclnn` ABI registration, `torch.library` FakeTensor Meta kernel binding, Driver/CANN/`torch_npu` ABI compatibility, and end-to-end CUDA-to-Ascend model/kernel migration workflows.
+This repository hosts the **`infer-ops-compat` graded domain knowledge corpus** for MindIE Agent (**34 graded units**: `L1: 3`, `L2: 21`, `L3: 9`, `L4: 1`). Focusing on the bridge layer between PyTorch / `torch_npu` and the Ascend CANN graph compiler stack (GE / GERT / TorchAir `npugraph_ex` / ACLGraph), it covers FX graph capture & pass pipeline ordering axioms, dynamic-shape unknown-graph partitioning & IMAS/DevMM static memory reuse, ACLGraph frozen-address refresh & D2H sync guard triage, AscendC `OpDef` / GE IR prototype & two-stage `aclnn` ABI registration, `torch.library` FakeTensor Meta kernel binding, Driver/CANN/`torch_npu` ABI compatibility, and end-to-end CUDA-to-Ascend model/kernel migration workflows.
 
 ### 1. The `mindie-graded-unit/1` L1–L4 Hierarchy
 
-Instead of lossy chat summaries or unconditioned "best practices", every knowledge unit in this repository is structured into **four graded levels (L1–L4)** based on engineering abstraction and actionability (current breakdown: **L1: 3 · L2: 11 · L3: 7 · L4: 1**):
+Instead of lossy chat summaries or unconditioned "best practices", every knowledge unit in this repository is structured into **four graded levels (L1–L4)** based on engineering abstraction and actionability (current breakdown: **L1: 3 · L2: 21 · L3: 9 · L4: 1**):
 
 | Level | Canonical Category (`category`) | Role | Scope & Admission Requirements |
 | :---: | --- | --- | --- |
@@ -100,7 +100,7 @@ Instead of lossy chat summaries or unconditioned "best practices", every knowled
 flowchart LR
   Agent["🤖 AI Coding Agent (Claude Code / Codex / Kimi / DSH)"]
   Query["🔎 knowledge_query (Query text + observed conditions)"]
-  Manifest["📋 index/routing-manifest.json (22 units · condition predicates · inheritance)"]
+  Manifest["📋 index/routing-manifest.json (34 units · condition predicates · inheritance)"]
   Topology["🗂️ index/shard-topology.json (Subdomain shards · L1-L4 counts)"]
   Match{"⚖️ Condition Matcher (matched / mismatch / condition_unknown)"}
   Explain["📖 knowledge_explain (Read pinned unit @revision)"]
@@ -117,17 +117,17 @@ flowchart LR
 
 ## 📊 Subdomain Breakdown & Representative Units
 
-[`index/routing-manifest.json`](./index/routing-manifest.json) and [`index/shard-topology.json`](./index/shard-topology.json) are the authoritative derived inventories rebuilt from the Markdown units. This repository currently contains **22 graded knowledge units** (**L1: 3 · L2: 11 · L3: 7 · L4: 1**):
+[`index/routing-manifest.json`](./index/routing-manifest.json) and [`index/shard-topology.json`](./index/shard-topology.json) are the authoritative derived inventories rebuilt from the Markdown units. This repository currently contains **34 graded knowledge units** (**L1: 3 · L2: 21 · L3: 9 · L4: 1**):
 
 ### 1. Subdomain Statistics
 
 | Subdomain | Units | Level Breakdown (`L1–L4`) | Core Engineering Scope |
 | --- | :---: | :---: | --- |
-| `graph` | **10** | `L1: 1, L2: 5, L3: 4` | TorchAir `npugraph_ex` capture & pass pipeline axioms, ACLGraph replay failure & address refresh, deadlock/D2H sync guards, GE dynamic-shape partition, IMAS/DevMM memory reuse, PatternFusionPass triage, and GERT host coredump GDB workflows |
-| `runtime` | **5** | `L1: 1, L2: 2, L3: 2` | Ascend driver / CANN / `torch_npu` ABI & `SOC_VERSION` compatibility axioms, `torch.library` FakeTensor Meta registration, `npugraph_ex` reinplace tensor-move audit, and five-step compile-vs-runtime triage workflow |
+| `graph` | **14** | `L1: 1, L2: 9, L3: 4` | TorchAir `npugraph_ex` capture & pass pipeline axioms, ACLGraph replay failure & address refresh, GE dynamic-shape partition, IMAS/DevMM memory reuse, AutoFuse Inductor LoopIR, SuperKernel binary fusion, `MindIE-SD` Inductor pattern-dev, and GERT host coredump GDB workflows |
+| `runtime` | **7** | `L1: 1, L2: 4, L3: 2` | Ascend driver / CANN / `torch_npu` ABI & `SOC_VERSION` compatibility axioms, multi-stream Cube-Vector & DBO overlap, `npu_prefetch` weight L2 prefetch window, `torch.library` FakeTensor Meta registration, `npugraph_ex` reinplace audit, and compile-vs-runtime triage workflows |
+| `deployment` | **6** | `L2: 5, L3: 1` | Ascend Docker device-mount modes & driver/firmware install order, CANN `Toolkit -> Kernels -> NNAL` install verification, MindIE Service config/TLS/memory budget contract, `vllm-ascend` packaging entrypoint, WheelNext/310P Triton stack SOP, and Volcano Kthena / MindIE Motor PD cloud-native deployment workflow |
 | `registration` | **4** | `L1: 1, L2: 2, L4: 1` | AscendC `OpDef` host registration, GE IR prototype & two-stage `aclnn` ABI axioms, `InferShape`/`TilingData` alignment SOP, PyTorch C++ extension `EXEC_NPU_CMD` binding, and direct-kernel + Meta registration L4 mutator |
-| `deployment` | **2** | `L2: 2` | MindIE Service configuration, TLS permissions & NPU memory budget startup contract SOP, and `vllm-ascend` packaging entrypoint vs SoC probe boundary SOP |
-| `migration` | **1** | `L3: 1` | End-to-end workflow for migrating CUDA-oriented PyTorch inference models and kernels to `torch_npu` and `vllm-ascend` |
+| `migration` | **3** | `L2: 1, L3: 2` | CUDA-to-`torch_npu`/`vllm-ascend` model & kernel migration workflow, GPU-to-Ascend migration audit & `npu-smi` vNPU health triage SOP, and ATC ONNX-to-OM dynamic input probing & precision verification workflow |
 
 ### 2. Representative Graded Knowledge Units
 
@@ -145,6 +145,7 @@ flowchart LR
 | [`unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow`](./graph/ge-compiler/memory-and-coredump/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow.md) | `graph` | **L3** / `workflow` | Ascend GE Compiler and GERT Runtime Host Coredump GDB Stack and Symbol Disassembly Triage Workflow | `mindie://infer-ops-compat/units/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow@1` |
 | [`unit-pytorch-cuda-to-torch-npu-serving-migration-workflow`](./migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md) | `migration` | **L3** / `workflow` | Migrate CUDA-oriented PyTorch inference models and kernels to torch_npu and vllm-ascend | `mindie://infer-ops-compat/units/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow@1` |
 | [`unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator`](./registration/custom-ops/torch-cpp-extensions/unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator.md) | `registration` | **L4** / `mutator` | PyTorch NPU Custom Op AscendC Direct Kernel Launch, aclnn Two-Stage Wrapper, and Meta Registration Mutator | `mindie://infer-ops-compat/units/unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator@1` |
+| [`unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop`](./graph/mindie-sd-and-omni/compile-and-integration/unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop.md) | `graph` | **L2** / `sop` | MindIE-SD torch_npu._inductor PatternMatcherPass development and two-stage (API-first, then compile) framework integration SOP | `mindie://infer-ops-compat/units/unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop@1` |
 
 ---
 
@@ -158,6 +159,7 @@ knowledge-infer-ops-compat/
 ├── AGENTS.md                           # Maintainer and AI-Agent repository boundary rules
 ├── README.md                           # Primary documentation (Chinese)
 ├── README.en.md                        # Primary documentation (English)
+├── LICENSE                             # Dual license (CC BY 4.0 corpus & docs + MIT scripts)
 ├── index/
 │   ├── routing-manifest.json           # [Derived Index] Live unit IDs, paths, tiers, conditions, inheritance & token estimates
 │   └── shard-topology.json             # [Derived Index] Subdomain shard counts and level topology
@@ -185,10 +187,19 @@ Every push and pull request targeting `main` is enforced by `.github/workflows/c
 - **Main Repository & One-Line Installer**: [`mindie-agent/mindie-agent`](https://github.com/mindie-agent/mindie-agent)
 - **Knowledge Runtime & Redaction Engine**: [`mindie-agent/knowledge`](https://github.com/mindie-agent/knowledge) (`mindie-knowledge`)
 - **The 7 Public Domain Knowledge Corpora**:
-  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` model bring-up, ACLGraph, MoE & PD disaggregation (43 Units)
-  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang operator development & optimization (87 Units)
-  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — Core inference engine scheduling, KV cache, multi-stream overlap & serving (78 Units)
-  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL collectives, RoCE/HCCS topology, hybrid parallelism & SHMEM (23 Units)
-  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN fault diagnostics, `msprof` profiling & accuracy validation (23 Units)
-  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir graph compilation, custom-op registration & CUDA migration (22 Units)
-  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — Multi-agent orchestration, NPU lease coordination, redaction audit & benchmarking (23 Units)
+  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` & `vLLM-Omni` model bring-up, ACLGraph, MoE, PD disaggregation & omni pipelines (91 Units)
+  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang / MindIE-SD operator development & optimization (105 Units)
+  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — Core inference engine scheduling, KV cache, `MindIE-SD` DiT acceleration & serving (109 Units)
+  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL collectives, RoCE/HCCS topology, Ulysses/Ring/CFG hybrid parallelism & SHMEM (39 Units)
+  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN fault diagnostics, `msprof` profiling & Window A/B/A perf/accuracy gates (39 Units)
+  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir/Inductor graph compilation, custom-op registration & two-stage integration (34 Units)
+  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — Multi-agent orchestration, S0–S6 auto-optimization, redaction audit & benchmarking (33 Units)
+
+---
+
+## 📄 License
+
+This repository is dual-licensed under [`LICENSE`](./LICENSE) in alignment with the `mindie-publication-contract/2` repository layout:
+
+- **Knowledge Corpus, Derived Indexes, Public Feedback & Documentation** (`<domain_path>/unit-*.md`, `index/`, `feedback/`, `README.md`, `README.en.md`, `AGENTS.md`, `docs/`) are licensed under **[Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE)**.
+- **Repository Maintenance Scripts & Workflow Configuration** (`scripts/`, `.github/workflows/`, `publication-contract.json`) are licensed under the **[MIT License](./LICENSE)**.

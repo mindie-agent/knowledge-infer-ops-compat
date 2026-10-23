@@ -58,6 +58,10 @@
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
     ],
+    "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+    ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
     ],
@@ -130,8 +134,8 @@
   "federation": {
     "corpus": {
       "automatic": false,
-      "bytes": 233443,
-      "estimated_tokens": 43370,
+      "bytes": 239873,
+      "estimated_tokens": 44489,
       "kind": "federation",
       "path": ".",
       "unit_ids": [
@@ -151,6 +155,7 @@
         "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
         "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
         "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow",
+        "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop",
         "unit-mindie-service-config-security-and-npu-memory-budget-sop",
         "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop",
         "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
@@ -169,7 +174,7 @@
         "unit-vllm-ascend-matched-stack-wheelnext-and-310p-triton-sop",
         "unit-vllm-ascend-volcano-kthena-and-mindie-motor-pd-deploy-workflow"
       ],
-      "units": 33
+      "units": 34
     },
     "domains": [
       {
@@ -192,8 +197,8 @@
       },
       {
         "automatic": false,
-        "bytes": 74478,
-        "estimated_tokens": 12821,
+        "bytes": 80908,
+        "estimated_tokens": 13940,
         "exceeds": [],
         "kind": "federation",
         "path": "graph",
@@ -206,6 +211,7 @@
           "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop",
           "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop",
           "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow",
+          "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop",
           "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop",
           "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms",
           "unit-npugraph-ex-custom-pattern-fusion-pass-and-converter-sop",
@@ -213,7 +219,7 @@
           "unit-npugraph-ex-dynamo-guard-recompilation-and-graph-break-sop",
           "unit-npugraph-ex-fx-node-dump-and-eager-accuracy-bisect-workflow"
         ],
-        "units": 13
+        "units": 14
       },
       {
         "automatic": false,
@@ -267,7 +273,7 @@
       }
     ]
   },
-  "index_build_elapsed_ms": 18.07849993929267,
+  "index_build_elapsed_ms": 20.657666987972334,
   "leaves": [
     {
       "automatic": false,
@@ -376,8 +382,8 @@
     },
     {
       "automatic": false,
-      "bytes": 9648,
-      "estimated_tokens": 1651,
+      "bytes": 9653,
+      "estimated_tokens": 1652,
       "exceeds": [],
       "kind": "leaf",
       "path": "graph/ge-compiler/memory-and-coredump",
@@ -390,7 +396,20 @@
     },
     {
       "automatic": false,
-      "bytes": 14459,
+      "bytes": 6424,
+      "estimated_tokens": 1118,
+      "exceeds": [],
+      "kind": "leaf",
+      "path": "graph/mindie-sd-and-omni/compile-and-integration",
+      "recommended_action": "review_leaf_split",
+      "unit_ids": [
+        "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 14460,
       "estimated_tokens": 2562,
       "exceeds": [],
       "kind": "leaf",
@@ -686,8 +705,8 @@
     },
     {
       "automatic": false,
-      "bytes": 20179,
-      "estimated_tokens": 3406,
+      "bytes": 20184,
+      "estimated_tokens": 3407,
       "exceeds": [],
       "kind": "subtree",
       "path": "graph/ge-compiler",
@@ -702,7 +721,20 @@
     },
     {
       "automatic": false,
-      "bytes": 37263,
+      "bytes": 6424,
+      "estimated_tokens": 1118,
+      "exceeds": [],
+      "kind": "subtree",
+      "path": "graph/mindie-sd-and-omni",
+      "recommended_action": "review_two_level_subtree_split",
+      "unit_ids": [
+        "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop"
+      ],
+      "units": 1
+    },
+    {
+      "automatic": false,
+      "bytes": 37264,
       "estimated_tokens": 6018,
       "exceeds": [],
       "kind": "subtree",
@@ -867,7 +899,7 @@
       "units": 3
     }
   ],
-  "unit_count": 33,
+  "unit_count": 34,
   "units": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": {
       "bytes": 19300,
@@ -1056,11 +1088,11 @@
       "tier": "L2"
     },
     "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop": {
-      "bytes": 5056,
+      "bytes": 5061,
       "category": "sop",
-      "content_sha256": "8f3fdf31ac49d3c24ef8690ea4a51ee2c1d4b19a742a4d764f6763154c8afaa6",
+      "content_sha256": "872572d891add53779cbfb8363cdc5f81f50a9d1a9acb5b67f46bd3c3525dea7",
       "domain_path": "graph/ge-compiler/memory-and-coredump",
-      "estimated_tokens": 893,
+      "estimated_tokens": 894,
       "evidence_strength": "software_contract",
       "inherits_from": [
         "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
@@ -1081,6 +1113,20 @@
       ],
       "path": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow.md",
       "tier": "L3"
+    },
+    "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop": {
+      "bytes": 6424,
+      "category": "sop",
+      "content_sha256": "2ca73ce4107cf25839969c10f409e559cc1d3163ab893f8c32611391abf972ff",
+      "domain_path": "graph/mindie-sd-and-omni/compile-and-integration",
+      "estimated_tokens": 1118,
+      "evidence_strength": "software_contract",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/mindie-sd-and-omni/compile-and-integration/unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop.md",
+      "tier": "L2"
     },
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": {
       "bytes": 14159,
@@ -1124,9 +1170,9 @@
       "tier": "L2"
     },
     "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms": {
-      "bytes": 7229,
+      "bytes": 7230,
       "category": "axiom",
-      "content_sha256": "60c947c3849fb865ed256d01c0a166a28eac69306e5f948b356cc10d2ab04490",
+      "content_sha256": "6e36fc9ebd79d941eb2355d2ab5f5a078c4562a70d6ad40fb3d0643be5be0537",
       "domain_path": "graph/npugraph-ex/architecture-and-passes",
       "estimated_tokens": 1271,
       "evidence_strength": "software_contract",

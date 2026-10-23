@@ -1,6 +1,6 @@
 # Inference Operations & Compatibility Domain Boundaries (`domain: "infer-ops-compat"`)
 
-This repository (`/Volumes/data/code/knowledge-infer-ops-compat`) stores
+This repository (`knowledge-infer-ops-compat`) stores
 deployment operations, build/packaging entrypoints, hardware-probe boundaries,
 and version/ABI compatibility knowledge units under the canonical domain
 `infer-ops-compat`. Runtime engine code lives exclusively in
@@ -13,7 +13,7 @@ and version/ABI compatibility knowledge units under the canonical domain
    setup, and operational deployment rules in `infer-ops-compat`. Do not mix
    operator kernels (`operators`), general scheduler/KV state machines
    (`infer-core`), profiler attribution formulas (`infer-observability`), or
-   legacy `vllm-ascend` corpus snapshots (`/Users/maoxx241/code/mindie-transcript-20261004/content`)
+   legacy `vllm-ascend` corpus snapshots (`vllm-ascend`)
    into this repository. Reject foreign-domain `mindie://<other-domain>/...`
    URIs on `explain` and `feedback`.
 2. **Unit Protocol & Index Rebuild**: Every unit must validate as
@@ -32,7 +32,5 @@ and version/ABI compatibility knowledge units under the canonical domain
 4. **Publication Gate**: [`./publication-contract.json`](./publication-contract.json)
    (`mindie-publication-contract/2`) and thin maintenance entry points under
    `scripts/` define the validator pin and local checks; run
-   `python scripts/run_all_checks.py` after any unit or index edit. Follow
-   `/Volumes/data/temp/mindie-003-execution/execution-status.json` for release
-   state and do not push to the public remote or cut over installed Harness pins
-   before the paired runtime/plugin release is finalized.
+   `python3 scripts/build_routing_index.py --root . --check` after any unit or
+   index edit.

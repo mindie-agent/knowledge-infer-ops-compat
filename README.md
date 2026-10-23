@@ -12,7 +12,7 @@
   <a href="https://github.com/mindie-agent/mindie-agent"><img src="https://img.shields.io/badge/MindIE%20Agent-Ecosystem-7045f5.svg" alt="MindIE Agent"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/Schema-mindie--graded--unit%2F1-0f766e.svg" alt="Schema mindie-graded-unit/1"></a>
   <a href="./publication-contract.json"><img src="https://img.shields.io/badge/domain-infer--ops--compat-0284c7.svg" alt="Domain infer-ops-compat"></a>
-  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-22%20Units-d97757.svg" alt="22 Graded Units"></a>
+  <a href="./index/routing-manifest.json"><img src="https://img.shields.io/badge/Graded%20Units-34%20Units-d97757.svg" alt="34 Graded Units"></a>
   <a href="./index/shard-topology.json"><img src="https://img.shields.io/badge/Levels-L1%20to%20L4-10a37f.svg" alt="Levels L1-L4"></a>
 </p>
 
@@ -81,11 +81,11 @@
 
 ## 🏗️ 领域全景与 L1–L4 分级架构
 
-本仓库承载 MindIE Agent 的 **`infer-ops-compat` 领域分级知识源**（共 **22 个分级知识单元**：`L1: 3`、`L2: 11`、`L3: 7`、`L4: 1`）。聚焦 PyTorch / `torch_npu` 与昇腾 CANN 图编译器（GE / GERT / TorchAir `npugraph_ex` / ACLGraph）之间的桥接层：涵盖 FX 图捕获与 Pass 管线顺序公理、动态 shape 未知图切分与 IMAS/DevMM 静态内存复用、ACLGraph 冻结地址刷新与 D2H 同步护栏排障、AscendC `OpDef` / GE IR 原型与两阶段 `aclnn` ABI 注册、`torch.library` FakeTensor Meta 算子绑定、驱动/CANN/`torch_npu` 版本兼容栈以及 PyTorch CUDA 模型与算子向昇腾 NPU 的端到端迁移工作流。
+本仓库承载 MindIE Agent 的 **`infer-ops-compat` 领域分级知识源**（共 **34 个分级知识单元**：`L1: 3`、`L2: 21`、`L3: 9`、`L4: 1`）。聚焦 PyTorch / `torch_npu` 与昇腾 CANN 图编译器（GE / GERT / TorchAir `npugraph_ex` / ACLGraph）之间的桥接层：涵盖 FX 图捕获与 Pass 管线顺序公理、动态 shape 未知图切分与 IMAS/DevMM 静态内存复用、ACLGraph 冻结地址刷新与 D2H 同步护栏排障、AscendC `OpDef` / GE IR 原型与两阶段 `aclnn` ABI 注册、`torch.library` FakeTensor Meta 算子绑定、驱动/CANN/`torch_npu` 版本兼容栈以及 PyTorch CUDA 模型与算子向昇腾 NPU 的端到端迁移工作流。
 
 ### 1. `mindie-graded-unit/1` 四级知识单元体系（L1–L4）
 
-本知识库拒绝碎片化的聊天摘要或脱离前提的“万能经验”，所有知识单元均按工程抽象粒度与可操作性划分为 **L1–L4 四个层级**（当前分布：**L1: 3 · L2: 11 · L3: 7 · L4: 1**）：
+本知识库拒绝碎片化的聊天摘要或脱离前提的“万能经验”，所有知识单元均按工程抽象粒度与可操作性划分为 **L1–L4 四个层级**（当前分布：**L1: 3 · L2: 21 · L3: 9 · L4: 1**）：
 
 | 层级 | 标准类别 (`category`) | 工程定位 | 核心内容与准入要求 |
 | :---: | --- | --- | --- |
@@ -100,7 +100,7 @@
 flowchart LR
   Agent["🤖 AI Coding Agent (Claude Code / Codex / Kimi / DSH)"]
   Query["🔎 knowledge_query (查询词 + 实测环境条件)"]
-  Manifest["📋 index/routing-manifest.json (22 个单元元数据 · 条件与继承闭包)"]
+  Manifest["📋 index/routing-manifest.json (34 个单元元数据 · 条件与继承闭包)"]
   Topology["🗂️ index/shard-topology.json (子领域分片拓扑 · L1-L4 统计)"]
   Match{"⚖️ 条件匹配引擎 (matched / mismatch / condition_unknown)"}
   Explain["📖 knowledge_explain (按精确修订号 @revision 精读)"]
@@ -117,17 +117,17 @@ flowchart LR
 
 ## 📊 子领域分布与代表性知识单元
 
-[`index/routing-manifest.json`](./index/routing-manifest.json) 与 [`index/shard-topology.json`](./index/shard-topology.json) 是由全量 Markdown 单元派生的权威实时清单。当前仓库共包含 **22 个分级知识单元**（**L1: 3 · L2: 11 · L3: 7 · L4: 1**）：
+[`index/routing-manifest.json`](./index/routing-manifest.json) 与 [`index/shard-topology.json`](./index/shard-topology.json) 是由全量 Markdown 单元派生的权威实时清单。当前仓库共包含 **34 个分级知识单元**（**L1: 3 · L2: 21 · L3: 9 · L4: 1**）：
 
 ### 1. 子领域（Subdomain）分布统计
 
 | 子领域目录 | 单元数量 | 层级分布 (`L1–L4`) | 核心覆盖范围 |
 | --- | :---: | :---: | --- |
-| `graph` | **10** | `L1: 1, L2: 5, L3: 4` | TorchAir `npugraph_ex` 捕获与 Pass 管线公理、ACLGraph 重放失败与动态地址刷新、Deadlock/D2H 同步护栏、GE 动态 shape 切分、IMAS/DevMM 内存复用、PatternFusionPass 误编译与 GERT Host Coredump GDB 排障 |
-| `runtime` | **5** | `L1: 1, L2: 2, L3: 2` | 昇腾驱动 / CANN / `torch_npu` ABI 与 `SOC_VERSION` 兼容栈公理、`torch.library` 自定义算子 FakeTensor Meta 注册、`npugraph_ex` Reinplace 冗余拷贝审计及五步渐进式后端编译/运行时分诊工作流 |
+| `graph` | **14** | `L1: 1, L2: 9, L3: 4` | TorchAir `npugraph_ex` 捕获与 Pass 管线公理、ACLGraph 重放失败与动态地址刷新、GE 动态 shape 切分、IMAS/DevMM 内存复用、AutoFuse Inductor LoopIR、SuperKernel 二进制融合、`MindIE-SD` Inductor 模式开发及 GERT Host Coredump GDB 排障 |
+| `runtime` | **7** | `L1: 1, L2: 4, L3: 2` | 昇腾驱动 / CANN / `torch_npu` ABI 与 `SOC_VERSION` 兼容栈公理、多流 Cube-Vector 并发与 DBO 重叠、`npu_prefetch` 权重 L2 预取窗口、`torch.library` FakeTensor Meta 注册、`npugraph_ex` Reinplace 审计及编译/运行时分诊工作流 |
+| `deployment` | **6** | `L2: 5, L3: 1` | 昇腾容器三种挂载模式与驱动/固件安装顺序、CANN `Toolkit -> Kernels -> NNAL` 安装校验、MindIE Service 配置/TLS/显存预算契约、`vllm-ascend` 构建入口、WheelNext/310P Triton 兼容栈及 Volcano Kthena / MindIE Motor PD 云原生部署工作流 |
 | `registration` | **4** | `L1: 1, L2: 2, L4: 1` | AscendC `OpDef` Host 注册、GE IR 原型映射与两阶段 `aclnn` ABI 契约公理、`InferShape`/`TilingData` 结构体对齐 SOP、PyTorch C++ 扩展 `EXEC_NPU_CMD` 绑定及直调 Kernel + Meta 注册 L4 Mutator |
-| `deployment` | **2** | `L2: 2` | MindIE Service 配置文件、TLS 权限与 NPU 显存预算启动契约 SOP，以及 `vllm-ascend` 构建入口与 SoC 探测边界规程 |
-| `migration` | **1** | `L3: 1` | 面向 CUDA 的 PyTorch 推理模型与算子向 `torch_npu` 及 `vllm-ascend` 迁移的端到端工程工作流 |
+| `migration` | **3** | `L2: 1, L3: 2` | 面向 CUDA 的 PyTorch 推理模型与算子向 `torch_npu` 及 `vllm-ascend` 迁移工作流、GPU-to-Ascend 迁移审计与 `npu-smi` vNPU 健康分诊 SOP，以及 ATC ONNX-to-OM 动态输入探测与精度核验工作流 |
 
 ### 2. 代表性分级知识单元（Representative Units）
 
@@ -145,6 +145,7 @@ flowchart LR
 | [`unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow`](./graph/ge-compiler/memory-and-coredump/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow.md) | `graph` | **L3** / `workflow` | Ascend GE Compiler and GERT Runtime Host Coredump GDB Stack and Symbol Disassembly Triage Workflow | `mindie://infer-ops-compat/units/unit-ge-compiler-and-gert-host-coredump-gdb-triage-workflow@1` |
 | [`unit-pytorch-cuda-to-torch-npu-serving-migration-workflow`](./migration/cuda-to-npu/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow.md) | `migration` | **L3** / `workflow` | Migrate CUDA-oriented PyTorch inference models and kernels to torch_npu and vllm-ascend | `mindie://infer-ops-compat/units/unit-pytorch-cuda-to-torch-npu-serving-migration-workflow@1` |
 | [`unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator`](./registration/custom-ops/torch-cpp-extensions/unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator.md) | `registration` | **L4** / `mutator` | PyTorch NPU Custom Op AscendC Direct Kernel Launch, aclnn Two-Stage Wrapper, and Meta Registration Mutator | `mindie://infer-ops-compat/units/unit-torch-npu-custom-op-ascendc-direct-kernel-and-aclnn-mutator@1` |
+| [`unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop`](./graph/mindie-sd-and-omni/compile-and-integration/unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop.md) | `graph` | **L2** / `sop` | MindIE-SD torch_npu._inductor PatternMatcherPass development and two-stage (API-first, then compile) framework integration SOP | `mindie://infer-ops-compat/units/unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop@1` |
 
 ---
 
@@ -158,6 +159,7 @@ knowledge-infer-ops-compat/
 ├── AGENTS.md                           # 维护者与 AI Agent 仓库操作边界规范
 ├── README.md                           # 中文主文档
 ├── README.en.md                        # 英文主文档 (English Documentation)
+├── LICENSE                             # 双许可声明 (CC BY 4.0 语料与文档 + MIT 维护脚本)
 ├── index/
 │   ├── routing-manifest.json           # [派生索引] 全量单元 ID、路径、层级、条件、继承闭包与 Token 估算
 │   └── shard-topology.json             # [派生索引] 子领域分片计数与层级拓扑
@@ -185,10 +187,19 @@ knowledge-infer-ops-compat/
 - **主仓库与一键安装入口**：[`mindie-agent/mindie-agent`](https://github.com/mindie-agent/mindie-agent)
 - **知识检索与隐私脱敏运行时**：[`mindie-agent/knowledge`](https://github.com/mindie-agent/knowledge)（Python 包 `mindie-knowledge`）
 - **七大公开领域知识库矩阵**：
-  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` 适配、图编译、MoE 与 PD 分离（43 Units）
-  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang 算子开发与优化（87 Units）
-  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — 核心推理引擎调度、KV Cache、多流并行与服务化架构（78 Units）
-  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL 集合通信、RoCE/HCCS 拓扑、多维并行与 SHMEM（23 Units）
-  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN 故障诊断、`msprof` 性能剖析与精度验证（23 Units）
-  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir 图编译、自定义算子注册与 CUDA 迁移兼容（22 Units）
-  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — 智能体编排、远端 NPU 租约协同、脱敏审计与基准评测（23 Units）
+  - [`knowledge-vllm-ascend`](https://github.com/mindie-agent/knowledge-vllm-ascend) — `vLLM-Ascend` 与 `vLLM-Omni` 适配、图编译、MoE、PD 分离与多阶段全模态流水线（91 Units）
+  - [`knowledge-operators`](https://github.com/mindie-agent/knowledge-operators) — AscendC / BiShengIR / Triton / TileLang / MindIE-SD 算子开发与优化（105 Units）
+  - [`knowledge-infer-core`](https://github.com/mindie-agent/knowledge-infer-core) — 核心推理引擎调度、KV Cache、`MindIE-SD` 扩散加速与服务化架构（109 Units）
+  - [`knowledge-infer-distributed`](https://github.com/mindie-agent/knowledge-infer-distributed) — HCCL 集合通信、RoCE/HCCS 拓扑、Ulysses/Ring/CFG 混合并行与 SHMEM（39 Units）
+  - [`knowledge-infer-observability`](https://github.com/mindie-agent/knowledge-infer-observability) — CANN 故障诊断、`msprof` 性能剖析与 A/B/A 性能/精度门禁（39 Units）
+  - [`knowledge-infer-ops-compat`](https://github.com/mindie-agent/knowledge-infer-ops-compat) — GE/TorchAir/Inductor 图编译、自定义算子注册与两阶段框架集成（34 Units）
+  - [`knowledge-agent-engineering`](https://github.com/mindie-agent/knowledge-agent-engineering) — 智能体编排、S0–S6 自动调优工作流、脱敏审计与基准评测（33 Units）
+
+---
+
+## 📄 开源许可（License）
+
+本仓库遵循 [`LICENSE`](./LICENSE) 双许可声明（与 `mindie-publication-contract/2` 仓库结构对齐）：
+
+- **知识语料、派生索引、公开反馈与文档证据**（`<domain_path>/unit-*.md`、`index/`、`feedback/`、`README.md`、`README.en.md`、`AGENTS.md`、`docs/`）采用 **[Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE)** 许可协议。
+- **仓库维护脚本与工作流配置**（`scripts/`、`.github/workflows/`、`publication-contract.json`）采用 **[MIT License](./LICENSE)** 许可协议。

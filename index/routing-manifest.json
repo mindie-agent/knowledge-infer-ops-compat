@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 18.07849993929267,
+  "build_elapsed_ms": 20.657666987972334,
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
     "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": [
@@ -58,6 +58,10 @@
     "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
       "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop"
+    ],
+    "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop": [
+      "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+      "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
     ],
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": [
       "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms"
@@ -128,7 +132,7 @@
       "unit-mindie-service-config-security-and-npu-memory-budget-sop"
     ]
   },
-  "generation": "3c50d8398d660b63824e7c21099bb2f29ba0619e447c382ff82f781ed0c0ed94",
+  "generation": "28519b767ae32e07bb421a50fcf350f96903f064c4037450a42ea245974d4fd2",
   "id_path": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
     "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order/unit-ascend-docker-three-modes-and-driver-firmware-install-sop.md",
@@ -146,6 +150,7 @@
     "unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-graph-compile-stage-and-dynamic-shape-partition-sop.md",
     "unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop": "graph/ge-compiler/memory-and-coredump/unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop.md",
     "unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow": "graph/ge-compiler/fusion-passes-and-compile/unit-ge-pattern-fusion-pass-and-buffer-fusion-triage-workflow.md",
+    "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop": "graph/mindie-sd-and-omni/compile-and-integration/unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop.md",
     "unit-mindie-service-config-security-and-npu-memory-budget-sop": "deployment/mindie-service/unit-mindie-service-config-security-and-npu-memory-budget-sop.md",
     "unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop": "migration/npu-adapter/code-review-and-smi/cuda-api-audit-and-device-health/unit-npu-adapter-reviewer-and-npu-smi-health-triage-sop.md",
     "unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop": "graph/npugraph-ex/runtime-and-accuracy-dfx/unit-npugraph-ex-aclgraph-replay-failure-and-address-refresh-sop.md",
@@ -167,7 +172,7 @@
   "query_budget_excludes_build": true,
   "schema_version": "mindie-routing-manifest/1",
   "token_estimator": "utf8_bytes_div_4_ceiling",
-  "unit_count": 33,
+  "unit_count": 34,
   "units": [
     {
       "category": "axiom",
@@ -969,7 +974,7 @@
       "revision": 1,
       "tier": "L2",
       "title": "Ascend GE IMAS Graph Memory Reuse Ratio, Topological Liveness, and DevMM Allocation Diagnosis SOP",
-      "token_estimate": 893,
+      "token_estimate": 894,
       "triggers": {
         "error_signatures": [
           "IMAS reach_theory_rate below threshold",
@@ -1040,6 +1045,67 @@
           "DUMP_GRAPH_LEVEL",
           "fusionSwitchFile",
           "UBFusion GraphFusion"
+        ]
+      }
+    },
+    {
+      "category": "sop",
+      "conditions": {
+        "cann_versions": [
+          ">=8.5.0"
+        ],
+        "hardware": [
+          "Ascend 910B (Atlas A2)",
+          "Ascend 910C (Atlas A3)",
+          "Ascend 950PR/DT"
+        ],
+        "workloads": [
+          "PyTorch Inductor pattern matcher development, ViewCopy/InplaceCopy elimination, and MindIE-SD integration into vLLM-Omni, LightX2V, DiffSynth-Engine, and Cache-DiT"
+        ]
+      },
+      "domain_path": "graph/mindie-sd-and-omni/compile-and-integration",
+      "evidence_strength": "software_contract",
+      "id": "unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop",
+      "inherits_from": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "inherits_from_closure": [
+        "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms",
+        "unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms"
+      ],
+      "path": "graph/mindie-sd-and-omni/compile-and-integration/unit-mindie-sd-inductor-pattern-dev-and-two-stage-framework-integration-sop.md",
+      "provenance": {
+        "evidence_refs": [
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/pattern-dev/SKILL.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/framework-integration/SKILL.md",
+          "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:docs/zh/features/compilation.md"
+        ],
+        "source_digest": "6de10998437e68775d01a16c3ce025f75c5a744b81acc96e6b4ffc663b7e982c",
+        "source_locator": "Ascend/MindIE-SD@9fe772dfb90696e21b5e5d4e92ca07dffab84cf4:.agents/skills/pattern-dev/SKILL.md",
+        "source_type": "architecture_and_runtime_guide",
+        "supersedes": []
+      },
+      "revision": 1,
+      "tier": "L2",
+      "title": "MindIE-SD MindieSDBackend Inductor pattern-dev lifecycle and two-stage third-party framework-integration SOP",
+      "token_estimate": 1118,
+      "triggers": {
+        "error_signatures": [
+          "torch.compile(submodule, backend=MindieSDBackend()) has 0 pattern hits when return value is not assigned",
+          "BACKEND_MATCH failure triggers repeated Dynamo recompilation until recompile_limit fallback",
+          "hcom_alltoallv variable-split collective inside compiled graph degrades latency by >10x"
+        ],
+        "keywords": [
+          "pattern-dev",
+          "framework-integration",
+          "MindieSDBackend",
+          "GraphPatternEntry",
+          "register_replacement",
+          "_compiled_call_impl",
+          "hccl_eager",
+          "compare_profiles",
+          "analyze_copy_kernels"
         ]
       }
     },
