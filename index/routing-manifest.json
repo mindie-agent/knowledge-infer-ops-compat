@@ -1,5 +1,5 @@
 {
-  "build_elapsed_ms": 20.657666987972334,
+  "build_elapsed_ms": 18.89362500514835,
   "closure": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": [],
     "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": [
@@ -132,7 +132,7 @@
       "unit-mindie-service-config-security-and-npu-memory-budget-sop"
     ]
   },
-  "generation": "28519b767ae32e07bb421a50fcf350f96903f064c4037450a42ea245974d4fd2",
+  "generation": "b37ec10f24b1f9ea449ea46485931bb685baf926a3e4eabce5b29c653c0cd4cc",
   "id_path": {
     "unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms": "runtime/cann-torch-npu/unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms.md",
     "unit-ascend-docker-three-modes-and-driver-firmware-install-sop": "deployment/container-and-driver/ascend-docker-and-hdk/device-mounts-and-driver-order/unit-ascend-docker-three-modes-and-driver-firmware-install-sop.md",
@@ -971,7 +971,7 @@
         "source_ref": "cannbot-skills:graph/ge-memory-analysis",
         "source_type": "curated_repo"
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L2",
       "title": "Ascend GE IMAS Graph Memory Reuse Ratio, Topological Liveness, and DevMM Allocation Diagnosis SOP",
       "token_estimate": 894,
@@ -1321,7 +1321,7 @@
         "source_ref": "cannbot-skills:graph/npugraph-ex-architecture+npugraph-ex-overview",
         "source_type": "curated_repo"
       },
-      "revision": 1,
+      "revision": 2,
       "tier": "L1",
       "title": "TorchAir npugraph_ex Capture, FX Lowering, and Pass Pipeline Ordering Axioms",
       "token_estimate": 1271,

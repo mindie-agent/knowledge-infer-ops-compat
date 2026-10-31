@@ -1,21 +1,33 @@
 ---
-schema: mindie-graded-unit/1
-id: unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms
-title: TorchAir npugraph_ex Capture, FX Lowering, and Pass Pipeline Ordering Axioms
-domain_path: graph/npugraph-ex/architecture-and-passes
-tier: L1
 category: axiom
-evidence_strength: software_contract
-status: active
-revision: 1
 conditions:
   accelerator: ascend
   compiler_backend: npugraph_ex
   pipeline_stage: fx-lowering-and-pass-pipeline
   runtime: torch_npu
+domain_path: graph/npugraph-ex/architecture-and-passes
+evidence_strength: software_contract
+id: unit-npugraph-ex-capture-lowering-and-pass-pipeline-axioms
 inherits_from:
 - unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms
+provenance:
+  evidence_refs:
+  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-overview/SKILL.md
+  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-architecture/SKILL.md
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/graph_mode_torchair_aclgraph.md
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/superkernel_tiling_schedule.md
+  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/multi_stream_execution.md
+  source_digest: 4c265986bc07bcaa178a44e2e88ff18d5fabbf311274db832b2388c4d91594a0
+  source_kind: external_import
+  source_locator: https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-architecture/SKILL.md
+  source_ref: cannbot-skills:graph/npugraph-ex-architecture+npugraph-ex-overview
+  source_type: curated_repo
+revision: 2
+schema: mindie-graded-unit/1
+status: active
 supersedes: []
+tier: L1
+title: TorchAir npugraph_ex Capture, FX Lowering, and Pass Pipeline Ordering Axioms
 triggers:
   error_signatures:
   - _optimize_fx pass ordering violation
@@ -30,20 +42,7 @@ triggers:
   - SuperKernel FUSE_SCOPE
   - decompose_auto_functionalized order
   - replace_dynamic_workspace_ops
-provenance:
-  source_kind: external_import
-  source_ref: cannbot-skills:graph/npugraph-ex-architecture+npugraph-ex-overview
-  source_locator: https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-architecture/SKILL.md
-  evidence_refs:
-  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-overview/SKILL.md
-  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/npugraph-ex-architecture/SKILL.md
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/graph_mode_torchair_aclgraph.md
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/superkernel_tiling_schedule.md
-  - https://gitcode.com/cann/cannbot-knowledge/blob/be5882ef29fa9943305085652d2025a038ba491c/knowledge/model/inference/concepts/techniques/multi_stream_execution.md
-  source_type: curated_repo
-  source_digest: 4c265986bc07bcaa178a44e2e88ff18d5fabbf311274db832b2388c4d91594a0
 ---
-
 # TorchAir npugraph_ex Capture, FX Lowering, and Pass Pipeline Ordering Axioms
 
 ## 1. End-to-End Capture and Lowering Boundary

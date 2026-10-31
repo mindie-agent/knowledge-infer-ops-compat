@@ -1,14 +1,5 @@
 ---
-schema: mindie-graded-unit/1
-id: unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop
-title: Ascend GE IMAS Graph Memory Reuse Ratio, Topological Liveness, and DevMM Allocation
-  Diagnosis SOP
-domain_path: graph/ge-compiler/memory-and-coredump
-tier: L2
 category: sop
-evidence_strength: software_contract
-status: active
-revision: 1
 conditions:
   accelerator: ascend
   compiler_backend: ge
@@ -16,9 +7,26 @@ conditions:
   runtime:
   - ge
   - torch_npu
+domain_path: graph/ge-compiler/memory-and-coredump
+evidence_strength: software_contract
+id: unit-ge-imas-static-memory-reuse-and-devmm-diagnosis-sop
 inherits_from:
 - unit-ascend-cann-driver-and-torch-npu-abi-compatibility-axioms
+provenance:
+  evidence_refs:
+  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-memory-analysis/SKILL.md
+  source_digest: cd5fb79328f05064447d882b14dd10881def5ac0fbb1020e566ea99d478666d0
+  source_kind: external_import
+  source_locator: https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-memory-analysis/SKILL.md
+  source_ref: cannbot-skills:graph/ge-memory-analysis
+  source_type: curated_repo
+revision: 2
+schema: mindie-graded-unit/1
+status: active
 supersedes: []
+tier: L2
+title: Ascend GE IMAS Graph Memory Reuse Ratio, Topological Liveness, and DevMM Allocation
+  Diagnosis SOP
 triggers:
   error_signatures:
   - IMAS reach_theory_rate below threshold
@@ -33,16 +41,7 @@ triggers:
   - svm_mem_stats_show devmm table
   - GraphScopeMem
   - topological liveness interval
-provenance:
-  source_kind: external_import
-  source_ref: cannbot-skills:graph/ge-memory-analysis
-  source_locator: https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-memory-analysis/SKILL.md
-  evidence_refs:
-  - https://gitcode.com/cann/cannbot-skills/blob/f305e200aa4b1e1fed73cd21ff1f083b8df25a1e/graph/ge-memory-analysis/SKILL.md
-  source_type: curated_repo
-  source_digest: cd5fb79328f05064447d882b14dd10881def5ac0fbb1020e566ea99d478666d0
 ---
-
 # Ascend GE IMAS Graph Memory Reuse Ratio, Topological Liveness, and DevMM Allocation Diagnosis SOP
 
 ## 1. Three-Layer Ascend GE Memory Architecture
